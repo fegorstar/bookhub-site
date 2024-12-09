@@ -1,0 +1,400 @@
+/* styles.css */
+
+/* Override Bootstrap's primary color */
+:root {
+    --bs-primary: #004080; /* Dark blue */
+    --dark-blue: #003366; /* Dark blue for navbar and footer */
+    --accent-yellow: #ffcc00; /* Yellow for buttons and accents */
+}
+
+/* Body Styles */
+body {
+    padding-top: 70px; /* Offset for fixed navbar */
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    text-align: center;
+    padding: 20px;
+    margin-top: 0;
+    padding-bottom: 100px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero .btn-yellow {
+    background-color: var(--accent-yellow); /* Yellow background */
+    border-color: var(--accent-yellow);     /* Yellow border */
+    color: var(--bs-primary);               /* Dark blue text */
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero .btn-yellow:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+    border-color: #e6b800;
+    color: var(--bs-primary);
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--dark-blue); /* Dark blue */
+}
+
+.navbar-logo {
+    max-height: 50px;
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #fff; /* White text for navbar links */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-yellow); /* Yellow on hover */
+}
+
+.navbar-nav .nav-get-involved {
+    background-color: var(--accent-yellow); /* Yellow background */
+    border-radius: 4px;
+    color: var(--bs-primary); /* Dark blue text */
+}
+
+.navbar-nav .nav-get-involved:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+    color: var(--bs-primary);
+}
+
+/* Search Box Styles */
+.navbar-nav .form-control {
+    border-radius: 20px;
+}
+
+.navbar-nav .btn-outline-light {
+    border: none;
+    background: none;
+}
+
+.navbar-nav .btn-outline-light:hover {
+    background-color: rgba(255, 204, 0, 0.2); /* Light yellow hover */
+}
+
+/* Our Team Section */
+
+
+
+.our-team .speaker {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.our-team .speaker:hover {
+    transform: scale(1.05);
+}
+
+.speaker-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid var(--accent-yellow);
+}
+
+.our-team h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.our-team p {
+    font-size: 0.9em;
+    color: gray;
+}
+
+/* Modals */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+
+
+/* Book Catalog Section */
+.books .book-image {
+    height: 10px; /* Adjust as needed to reduce height */
+    width: 100px;
+    object-fit: cover;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.books .card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.books .card-text {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Testimonials Section */
+.testimonial .testimonial-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.join-movement{
+    background: #ffff;
+}
+
+/* Join the Movement Section */
+.join-movement a.btn-yellow {
+    background-color: var(--accent-yellow); /* Yellow background */
+    border-color: var(--accent-yellow);     /* Yellow border */
+    color: var(--bs-primary);               /* Dark blue text */
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.join-movement a.btn-yellow:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+    border-color: #e6b800;
+    color: var(--bs-primary);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-blue); /* Dark blue */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: var(--accent-yellow);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #e6b800;
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-logo {
+        max-height: 40px;
+    }
+
+    .hero {
+        height: 60vh;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .speaker-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .testimonial .testimonial-img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-logo {
+        max-height: 35px;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .speaker-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .testimonial .testimonial-img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Book Catalog Section */
+.books .book-image {
+    height: 200px; /* Set a moderate height */
+    width: 100%; /* Ensure full width within the card */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    border-bottom: 2px solid #f0f0f0; /* Optional: Add a subtle border */
+}
+
+.books .card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.books .card-text {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Add Shadow and Hover Effects to Book Cards */
+.books .card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.books .card:hover {
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+
+/* styles.css */
+
+/* ... existing styles ... */
+
+/* Update .btn-yellow to apply to both links and buttons */
+.btn-yellow {
+    background-color: var(--accent-yellow); /* Yellow background */
+    border-color: var(--accent-yellow);     /* Yellow border */
+    color: var(--bs-primary);               /* Dark blue text */
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;                        /* Pointer cursor on hover */
+    border-radius: 4px;                     /* Rounded corners */
+    display: inline-block;                  /* Inline-block for proper spacing */
+    text-decoration: none;                  /* Remove underline for links */
+}
+
+.btn-yellow:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+    border-color: #e6b800;
+    color: var(--bs-primary);
+}
+
+/* Add margin below the "View More" button for spacing */
+.view-more-container {
+    margin-bottom: 40px; /* Adjust as needed */
+}
+
+/* Optional: Add a smooth transition to the "View More" button */
+.btn-yellow {
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn-yellow:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Responsive Adjustments for Book Images */
+@media (max-width: 768px) {
+    .books .book-image {
+        height: 180px; /* Slightly reduce height for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .books .book-image {
+        height: 150px; /* Further reduce height for mobile devices */
+    }
+
+    .books .card-title {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    .books .card-text {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+}
