@@ -129,9 +129,30 @@ body {
 }
 
 .our-team p {
-    font-size: 0.9em;
+    font-size: 0.8em;
     color: gray;
 }
+
+/* Spacing Between Team Member Cards */
+.our-team .row {
+    row-gap: 40px; /* Vertical spacing */
+    column-gap: 30px; /* Horizontal spacing */
+}
+
+/* Optional: Increase shadow and spacing on hover for a cleaner look */
+.our-team .speaker {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.our-team .speaker:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Modals */
 .modal {
@@ -261,7 +282,8 @@ footer a:hover {
     }
 
     .hero {
-        height: 60vh;
+        height: 100vh;
+        
     }
 
     .hero h1 {
@@ -289,9 +311,9 @@ footer a:hover {
     }
 
     .hero {
-        height: 50vh;
+        height: 100vh;
+        
     }
-
     .hero h1 {
         font-size: 1.5rem;
     }
@@ -309,6 +331,7 @@ footer a:hover {
         width: 50px;
         height: 50px;
     }
+    
 }
 
 /* Book Catalog Section */
@@ -397,4 +420,75 @@ footer a:hover {
     .books .card-text {
         font-size: 0.9rem; /* Adjust font size for smaller screens */
     }
+}
+
+
+/* Alternating Section Backgrounds */
+.blog-detail section:nth-child(even) {
+    background-color: #f8f9fa; /* Light grey background */
+    padding: 40px 20px;
+}
+
+.blog-detail section:nth-child(odd) {
+    background-color: #ffffff; /* White background */
+    padding: 40px 20px;
+}
+
+/* Headings and Paragraphs Styling */
+.blog-detail h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--bs-primary); /* Dark blue for headings */
+    margin-bottom: 20px;
+}
+
+.blog-detail p, 
+.blog-detail ul li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333; /* Default text color */
+}
+
+.blog-detail ul {
+    padding-left: 20px;
+}
+
+.blog-detail ul li {
+    margin-bottom: 10px;
+}
+
+
+/* Blog Detail Page Styling */
+
+/* Header Background */
+/* Content Header Styling */
+.content-header {
+    background-color: #f8f9fa; /* Light grey */
+    border-bottom: 1px solid #ddd;
+    padding: 30px 0;
+}
+
+/* Unified Content Card */
+.content-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+}
+
+/* Section Headers */
+.section-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--bs-primary);
+}
+
+/* List Styling */
+.content-card ul {
+    padding-left: 20px;
+}
+
+.content-card ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
 }

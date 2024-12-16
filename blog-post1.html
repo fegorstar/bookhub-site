@@ -1,4 +1,4 @@
-<!-- blog-post1.html -->
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +14,11 @@
 </head>
 <body>
 
-      <!-- Navigation Menu -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue fixed-top">
+    <!-- Navigation Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="assets/images/BookHub-LogoTRANS-1536x322.png" alt="FUTMinna Logo" class="navbar-logo img-fluid">
+                <img src="assets/images/Futminna_logo.jpg" alt="FUTMinna Logo" class="navbar-logo img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,20 +27,19 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#home">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="books.html">Books</a>
+                        <a class="nav-link" href="books.html">Catalog</a> <!-- Changed -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#our-team">Our Team</a>
+                        <a class="nav-link" href="open-access.html">Open Access</a> <!-- Changed -->
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#testimonial">Testimonials</a>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="https://www.datasphir.com/bookhub/#contact" target="_blank" >Get Involved</a> <!-- Changed -->
                     </li>
-                    <li class="nav-item ms-2">
-                        <a class="nav-link" href="index.html#contact-us">Get Involved</a>
-                    </li>
+                  
+                
                     <!-- Navbar Search Box -->
                     <li class="nav-item ms-3">
                         <form class="d-flex" role="search" action="books.html" method="GET">
@@ -52,14 +51,11 @@
             </div>
         </div>
     </nav>
+
     <!-- Blog Post Detail Section -->
     <section class="blog-detail mt-5 pt-5">
         <div class="container">
-            <header class="mb-5 text-center">
-                <h1>FUTMinna Leads the Charge in Revolutionising Academic Publishing in Nigeria</h1>
-                <p class="text-muted">Published on <strong>December 9, 2024</strong> by <strong>Abdulsalami Kovo</strong></p>
-            </header>
-            
+            <h1 class="mb-5 text-center" style="font-size: 2.5rem; font-weight: bold; ">FUTMinna Leads the Charge in Revolutionising Academic Publishing in Nigeria</h1>
             <article>
                 <!-- Featured Image -->
               
@@ -119,6 +115,22 @@
         </div>
     </section>
 
+
+    <!-- Join the Movement Contact Section -->
+    <section id="contact-us" class="join-movement py-5">
+        <div class="container text-center">
+            <h2 class="mb-4" style="font-weight: bold;">Join the Movement</h2>
+            <p class="mb-4">
+                FUTMinna’s partnership with Datasphir, supported by the Open Book Collective, demonstrates that modernising academic book publishing is not just possible but essential. Together, we are redefining how knowledge is created, shared, and sustained in Nigeria.
+            </p>
+            <p class="mb-4">
+                Discover FUTMinna’s groundbreaking journey and explore opportunities to join the Open Access Book movement.
+            </p>
+            <a href="https://www.datasphir.com/bookhub/#contact" class="btn btn-yellow">
+                <i class="bi bi-people-fill"></i> Get Involved
+            </a>
+        </div>
+    </section>
     <!-- Footer -->
   <!-- Footer -->
   <footer class="bg-dark-blue text-white py-3">
@@ -127,7 +139,8 @@
         <p>
             <a href="https://futminna.edu.ng/home/" target="_blank" rel="noopener noreferrer">FUTMinna</a> |
             <a href="https://openbookcollective.org/" target="_blank" rel="noopener noreferrer">Open Book Collective</a> |
-            <a href="https://datasphir.com/bookhub" target="_blank" rel="noopener noreferrer">Datasphir</a>
+            <a href="https://datasphir.com/bookhub" target="_blank" rel="noopener noreferrer">Datasphir</a> |
+            <a href="https://www.datasphir.com/bookhub/#contact" target="_blank" rel="noopener noreferrer">Get Involved</a>
         </p>
     </div>
 </footer>

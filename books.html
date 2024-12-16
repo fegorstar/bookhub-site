@@ -1,22 +1,16 @@
-<!-- books.html -->
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookHub - Books Catalog</title>
+    <title>BookHub - FUTMinna Leads Revolution in Academic Publishing</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons (Optional for Icons in Buttons) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/styles.css">
-    <style>
-        /* Custom styles for "Not Found" message */
-        .not-found {
-            display: none;
-        }
-    </style>
 </head>
 <body>
 
@@ -24,7 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="assets/images/BookHub-LogoTRANS-1536x322.png" alt="FUTMinna Logo" class="navbar-logo img-fluid">
+                <img src="assets/images/Futminna_logo.jpg" alt="FUTMinna Logo" class="navbar-logo img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,20 +27,19 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#home">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="books.html">Books</a>
+                        <a class="nav-link" href="books.html">Catalog</a> <!-- Changed -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#our-team">Our Team</a>
+                        <a class="nav-link" href="open-access.html">Open Access</a> <!-- Changed -->
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#testimonial">Testimonials</a>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="https://www.datasphir.com/bookhub/#contact" target="_blank" >Get Involved</a> <!-- Changed -->
                     </li>
-                    <li class="nav-item ms-2">
-                        <a class="nav-link" href="index.html#contact-us">Get Involved</a>
-                    </li>
+                  
+                
                     <!-- Navbar Search Box -->
                     <li class="nav-item ms-3">
                         <form class="d-flex" role="search" action="books.html" method="GET">
@@ -60,218 +53,80 @@
     </nav>
 
     <!-- Books Catalog Section -->
-    <section id="books" class="books mt-5 pt-5">
-        <div class="container">
-            <h2 class="mb-4 text-center">Books Catalog</h2>
-            <!-- Optional: In-page Search Bar (Enhancement) -->
-            <div class="mb-4">
-                <input type="text" id="booksPageSearchInput" class="form-control" onkeyup="searchBooksInPage()" placeholder="Search for books...">
-            </div>
-            <!-- Books Grid -->
-            <div class="row" id="booksGrid">
-                <!-- Book Item 1 -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 book-item">
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/images/a_prisoners_dream.png" class="card-img-top book-image" alt="A Prisoner's Dream">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">A Prisoner's Dream</h5>
-                            <p class="card-text">An inspiring tale of resilience and hope.</p>
-                            <a href="https://external-link.com/book1" target="_blank" class="btn btn-primary mt-auto">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Book Item 2 -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 book-item">
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/images/elementary-statistical-method-in-education.png" class="card-img-top book-image" alt="Elementary Statistical Method in Education">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Elementary Statistical Method in Education</h5>
-                            <p class="card-text">A comprehensive guide to statistical methods in educational research.</p>
-                            <a href="https://external-link.com/book2" target="_blank" class="btn btn-primary mt-auto">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Book Item 3 -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 book-item">
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/images/handbook-on-cognitive-maths.png" class="card-img-top book-image" alt="Handbook on Cognitive Maths">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Handbook on Cognitive Maths</h5>
-                            <p class="card-text">Enhancing mathematical cognition through innovative techniques.</p>
-                            <a href="https://external-link.com/book3" target="_blank" class="btn btn-primary mt-auto">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Book Item 4 -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 book-item">
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/images/introduction-to-marketing.png" class="card-img-top book-image" alt="Introduction to Marketing">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Introduction to Marketing</h5>
-                            <p class="card-text">A foundational guide to marketing principles and strategies.</p>
-                            <a href="https://external-link.com/book4" target="_blank" class="btn btn-primary mt-auto">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Book Item 5 (Hidden Initially) -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 book-item d-none">
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/images/isreal-from-monarchy-to-excile.png" class="card-img-top book-image" alt="From Monarchy to Exile: The Journey of Isreal">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">From Monarchy to Exile: The Journey of Isreal</h5>
-                            <p class="card-text">A historical exploration of Isreal's transformation from monarchy to exile.</p>
-                            <a href="https://external-link.com/book5" target="_blank" class="btn btn-primary mt-auto">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Book Item 6 (Hidden Initially) -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 book-item d-none">
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/images/library-automation.png" class="card-img-top book-image" alt="Library Automation: Modernizing Libraries">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Library Automation: Modernizing Libraries</h5>
-                            <p class="card-text">An in-depth look at automating library systems for efficiency.</p>
-                            <a href="https://external-link.com/book6" target="_blank" class="btn btn-primary mt-auto">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Book Item 7 (Hidden Initially) -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 book-item d-none">
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/images/mineral-resources.png" class="card-img-top book-image" alt="Mineral Resources: Extraction and Management">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Mineral Resources: Extraction and Management</h5>
-                            <p class="card-text">Comprehensive strategies for extracting and managing mineral resources.</p>
-                            <a href="https://external-link.com/book7" target="_blank" class="btn btn-primary mt-auto">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Book Item 8 (Hidden Initially) -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 book-item d-none">
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/images/selected-topics-in-biology.png" class="card-img-top book-image" alt="Selected Topics in Biology">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Selected Topics in Biology</h5>
-                            <p class="card-text">An advanced exploration of selected biological topics.</p>
-                            <a href="https://external-link.com/book8" target="_blank" class="btn btn-primary mt-auto">Read</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Not Found Message -->
-            <div id="notFoundMessage" class="text-center not-found">
-                <p class="text-danger">No books found matching your search.</p>
-            </div>
-            <!-- View More Button -->
-            <div class="text-center view-more-container">
-                <button id="viewMoreBtn" class="btn btn-yellow">View More</button>
-            </div>
+   <!-- Books Catalog Section -->
+   <section id="books" class="books mt-5 pt-5">
+    <div class="container">
+        <h2 class="mb-4 text-center fw-bold">Catalog</h2>
+        <div class="row" id="booksGrid"></div>
+
+        <!-- View More Button -->
+        <div class="text-center mt-4 mb-4">
+            <button id="viewMoreBtn" class="btn btn-warning">View More</button>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-dark-blue text-white py-3">
-        <div class="container text-center">
-            <p>&copy; 2024 BookHub. All rights reserved.</p>
-            <p>
-                <a href="https://futminna.edu.ng/home/" target="_blank" rel="noopener noreferrer">FUTMinna</a> |
-                <a href="https://openbookcollective.org/" target="_blank" rel="noopener noreferrer">Open Book Collective</a> |
-                <a href="https://datasphir.com/bookhub" target="_blank" rel="noopener noreferrer">Datasphir</a>
-            </p>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer class="bg-dark-blue text-white py-3">
+    <div class="container text-center">
+        <p>&copy; 2024 BookHub. All rights reserved.</p>
+        <p>
+            <a href="https://futminna.edu.ng/home/" target="_blank">FUTMinna</a> |
+            <a href="https://openbookcollective.org/" target="_blank">Open Book Collective</a> |
+            <a href="https://datasphir.com/bookhub" target="_blank">Datasphir</a> |
+            <a href="https://www.datasphir.com/bookhub/#contact" target="_blank">Get Involved</a>
+        </p>
+    </div>
+</footer>
 
-    <!-- Bootstrap JS and dependencies (Popper.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="assets/scripts.js"></script>
+<!-- Scripts -->
+<script>
+    const books = [
+        { title: "The Prisoner's Dream", link: "https://tetfund.bookhub.ng/books/588923ce-2fde-411b-bf1e-6eaa3b2bbf4b/", image: "assets/images/a_prisoners_dream.png" },
+        { title: "Elementary Statistical Methods in Education", link: "https://tetfund.bookhub.ng/books/b22f4688-055b-4385-a3c8-ff03f7ac3175/", image: "assets/images/elementary-statistical-method-in-education.png" },
+        { title: "Excursions into Gender & Sexuality", link: "https://tetfund.bookhub.ng/books/baec025f-7d86-4bb6-97fb-e9e335624808/", image: "assets/images/excursion-into-gender-and-sexuality.png" },
+        { title: "Fundamental Principles of Human Relations", link: "https://tetfund.bookhub.ng/books/3582caa0-f504-4c2e-9e7c-7838ac622ba1/", image: "assets/images/fundamental-principles-of-human-relations-for-students-of-tertiary-institution.png" },
+        { title: "Handbook of Cognitive Mathematics Education", link: "https://tetfund.bookhub.ng/books/74329711-803d-4ce8-9c2e-41e1e6c591e8/", image: "assets/images/handbook-on-cognitive-maths.png" },
+        { title: "Introduction to Marketing", link: "https://tetfund.bookhub.ng/books/b2ab8f6a-190a-4575-aa28-ed7191d27b5f/", image: "assets/images/introduction-to-marketing.png" },
+        { title: "Israel From Monarchy to Exile", link: "https://tetfund.bookhub.ng/books/255715e9-abec-4280-a650-ed9e63f9c402/", image: "assets/images/isreal-from-monarchy-to-excile.png" },
+        { title: "Issues in Multi-Disciplinary African History", link: "https://tetfund.bookhub.ng/books/5a3f4b2d-0c92-43ca-84d6-c3464362bc45/", image: "assets/images/issues-in-the-multi-disciplinary-and-methodological-approach-to-african-history-and-international-studies.png" },
+        { title: "Mineral Resources of North-Central Nigeria", link: "https://tetfund.bookhub.ng/books/c7bd9b69-5712-4015-9a5e-9c6285fda98c/", image: "assets/images/mineral-resources.png" },
+        { title: "Multimedia Resources for Teaching", link: "https://tetfund.bookhub.ng/books/53b7a366-946d-41a1-9d53-95837319dbb5/", image: "assets/images/multimedia- resources-and-electronic-based-instructional-strategies-for-teaching-social-studies.png" },
+        { title: "Phytoplankton Algae of Nigeria", link: "https://tetfund.bookhub.ng/books/ffd50c09-ba05-4b5d-b3fe-d7a6a9f81925/", image: "assets/images/Algae.png" },
+        { title: "Research Skills in Science Education", link: "https://tetfund.bookhub.ng/books/9b1488c1-1e24-490f-8ce7-2ab435b6a459/", image: "assets/images/research-skills-in-science-and-technology-education-for-tertiary-institution-in-nigeria.png" },
+        { title: "Library Automation in Nigeria", link: "https://tetfund.bookhub.ng/books/c24b9c03-91d9-4605-8fba-aab49d345eba/", image: "assets/images/library-automation.png" },
+        { title: "Selected Topics in Biology", link: "https://tetfund.bookhub.ng/books/ee5cac1f-f8fc-42e4-90f8-95c2a4e20c42/", image: "assets/images/selected-topics-in-biology.png" }
+    ];
 
-    <!-- Custom Script for Book Search and View More -->
-    <script>
-        // Function to get query parameters from URL
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
+    const booksGrid = document.getElementById('booksGrid');
+    const viewMoreBtn = document.getElementById('viewMoreBtn');
 
-        // Function to search books based on query parameter
-        function searchBooksOnPage(query) {
-            const filter = query.toLowerCase();
-            const books = document.getElementsByClassName('book-item');
-            let found = false;
-
-            Array.from(books).forEach(function(book) {
-                const title = book.querySelector('.card-title').innerText.toLowerCase();
-                const description = book.querySelector('.card-text').innerText.toLowerCase();
-                if (title.includes(filter) || description.includes(filter)) {
-                    book.style.display = '';
-                    found = true;
-                } else {
-                    book.style.display = 'none';
-                }
-            });
-
-            // Display "Not Found" message if no matches
-            const notFoundMessage = document.getElementById('notFoundMessage');
-            if (found) {
-                notFoundMessage.style.display = 'none';
-            } else {
-                notFoundMessage.style.display = 'block';
-            }
-        }
-
-        // Function to handle in-page search (Optional Enhancement)
-        function searchBooksInPage() {
-            const input = document.getElementById('booksPageSearchInput');
-            const filter = input.value.toLowerCase();
-            const books = document.getElementsByClassName('book-item');
-            let found = false;
-
-            Array.from(books).forEach(function(book) {
-                const title = book.querySelector('.card-title').innerText.toLowerCase();
-                const description = book.querySelector('.card-text').innerText.toLowerCase();
-                if (title.includes(filter) || description.includes(filter)) {
-                    book.style.display = '';
-                    found = true;
-                } else {
-                    book.style.display = 'none';
-                }
-            });
-
-            // Display "Not Found" message if no matches
-            const notFoundMessage = document.getElementById('notFoundMessage');
-            if (found) {
-                notFoundMessage.style.display = 'none';
-            } else {
-                notFoundMessage.style.display = 'block';
-            }
-        }
-
-        // Execute search on page load if query parameter exists
-        window.onload = function() {
-            const query = getQueryParam('query');
-            if (query) {
-                searchBooksOnPage(query);
-            }
-
-            // Optional: Pre-fill the in-page search box with the query
-            if (query) {
-                const inPageSearchInput = document.getElementById('booksPageSearchInput');
-                if (inPageSearchInput) {
-                    inPageSearchInput.value = query;
-                }
-            }
-        };
-
-        // View More Functionality
-        document.getElementById('viewMoreBtn').addEventListener('click', function() {
-            const hiddenBooks = document.querySelectorAll('.book-item.d-none');
-            hiddenBooks.forEach(function(book) {
-                book.classList.remove('d-none');
-            });
-            this.style.display = 'none'; // Hide the button after clicking
+    function renderBooks() {
+        books.forEach((book, index) => {
+            const isHidden = index >= 8 ? 'd-none' : '';
+            booksGrid.innerHTML += `
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 book-item ${isHidden}">
+                    <div class="card h-100 shadow-sm">
+                        <img src="${book.image}" alt="${book.title}" class="card-img-top book-image">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">${book.title}</h5>
+                            <a href="${book.link}" target="_blank" class="btn btn-primary mt-auto">Read</a>
+                        </div>
+                    </div>
+                </div>
+            `;
         });
-    </script>
+    }
 
+    viewMoreBtn.addEventListener('click', () => {
+        document.querySelectorAll('.book-item.d-none').forEach(item => item.classList.remove('d-none'));
+        viewMoreBtn.style.display = 'none';
+    });
+
+    renderBooks();
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
