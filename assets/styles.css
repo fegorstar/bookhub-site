@@ -175,6 +175,11 @@ h1, h2, h3, p {
 
 /* ============================== */
 /* Section - Grey Background */
+
+.benefits-section {
+    background-color: #e2e3e5;
+    padding: 60px 20px; /* Padding top and bottom */
+}
 /* Section Spacing */
 .section-grey {
     background-color: #e2e3e5;
@@ -265,6 +270,8 @@ footer a:hover {
     color: #000;
     text-decoration: none;
 }
+
+
 
 /* ============================== */
 /* Responsive Adjustments */
