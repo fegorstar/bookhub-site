@@ -29,13 +29,14 @@
                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="books.html">Catalog</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="open-access.html">Open Access</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.datasphir.com/bookhub/#contact" target="_blank">Get Involved</a>
+                        <a class="nav-link" href="books.html">Catalog</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.datasphir.com/bookhub/#contact" target="_blank">BookHub</a>
                     </li>
                     <li class="nav-item ms-3">
                         <form class="d-flex" role="search" action="books.html" method="GET">
@@ -48,33 +49,27 @@
         </div>
     </nav>
 
+
     <!-- Books Catalog Section -->
-    <section id="books" class="books mt-5 pt-5">
-        <div class="container">
-            <h2 class="mb-4 text-center fw-bold">Catalog</h2>
-            
-            <!-- Search Box for Catalog -->
-            <div class="row mb-4 justify-content-center">
-                <div class="col-lg-12">
-                    <input id="catalogSearchBox" type="text" class="form-control" placeholder="Search for a book..." aria-label="Search for a book">
-                </div>
-            </div>
-            
-            <div class="row" id="booksGrid"></div>
+   <!-- Books Catalog Section -->
+<section id="books" class="books mt-1 pt-4">
+    <div class="container">
+        <h2 class="mb-4 text-center fw-bold">Catalog</h2>
+        
+        <!-- Books Grid -->
+        <div class="row" id="booksGrid"></div>
 
-            <!-- View More Button -->
-           <!-- View More Button -->
-<div class="d-flex justify-content-center mt-4 mb-4">
-    <button id="viewMoreBtn" class="btn btn-warning">View More</button>
-</div>
-
-            <!-- Not Found Message -->
-            <div id="notFoundMessage" class="text-center mt-4" style="display:none;">
-                <p class="text-danger fw-bold">No books found. Please try a different search term.</p>
-            </div>
+        <!-- View More Button -->
+        <div class="d-flex justify-content-center mt-4 mb-4">
+            <button id="viewMoreBtn" class="btn btn-warning">View More</button>
         </div>
-    </section>
 
+        <!-- Not Found Message -->
+        <div id="notFoundMessage" class="text-center mt-4" style="display:none;">
+            <p class="text-danger fw-bold">No books found. Please try a different search term.</p>
+        </div>
+    </div>
+</section>
     <!-- Footer -->
     <footer class="bg-dark-blue text-white py-3">
         <div class="container text-center">

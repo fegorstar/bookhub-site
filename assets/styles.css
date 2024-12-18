@@ -63,48 +63,67 @@ h1, h2, h3, p {
 /* ============================== */
 /* Hero Section */
 /* ============================== */
+/* Hero Section Styling */
+/* Hero Section Styling */
 .hero {
     background-color: #fff;
     color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 60px 20px;
+    padding: 60px 0; /* Adds spacing around the section */
 }
 
-.hero h1 {
-    font-size: 2.0rem;
+.hero .row {
+    display: flex;
+    align-items: stretch; /* Ensures both sides stretch to the same height */
+}
+
+.hero .col-lg-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the text content */
+}
+
+.hero .col-lg-5 {
+    display: flex;
+    align-items: center; /* Center image vertically */
+    justify-content: center;
+   
+}
+
+.hero .col-lg-5 img {
+    width: 100%; /* Ensures the image takes the full width */
+    max-height: 100%; /* Matches the height to the content */
+    border-radius: 8px;
+  
+}
+
+.hero h2 {
+    font-size: 1.7rem;
     font-weight: bold;
     margin-bottom: 20px;
+    line-height: 1.4;
 }
 
 .hero p {
-    font-size: 1.1rem;
+    font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
 .hero .btn-yellow {
-    background-color: var(--accent-yellow);
-    border-color: var(--accent-yellow);
-    color: var(--bs-primary);
+    background-color: #ffcc00;
+    color: #003366;
     font-weight: bold;
     padding: 10px 20px;
-    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .hero .btn-yellow:hover {
     background-color: #e6b800;
     color: #fff;
-    border-color: #e6b800;
 }
 
-.hero .col-lg-4 img {
-    max-height: 150px;
-    width: auto;
-    margin-bottom: 15px;
-}
 
 /* ============================== */
 /* Our Team Section */

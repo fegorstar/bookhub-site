@@ -1,3 +1,32 @@
+
+
+
+
+
+
+ // Global Search Handler in Navbar
+ document.querySelector('form[role="search"]').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const searchInput = this.querySelector('input[name="query"]').value.trim();
+    if (searchInput) {
+        // Redirect to books.html with the search query parameter
+        window.location.href = `books.html?query=${encodeURIComponent(searchInput)}`;
+    }
+});
+
+// Check for Search Query on books.html
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchTerm = urlParams.get('query');
+    if (searchTerm) {
+        // Call the searchBooks function with the search term
+        searchBooks(searchTerm);
+        // Remove the "View More" button on search
+        document.getElementById('viewMoreBtn').style.display = 'none';
+    }
+});
+
+// Books data (your provided books list)
 const books = [
     { title: "The Prisoner's Dream", link: "https://tetfund.bookhub.ng/books/588923ce-2fde-411b-bf1e-6eaa3b2bbf4b/", image: "assets/images/a_prisoners_dream.png" },
     { title: "Elementary Statistical Methods in Education", link: "https://tetfund.bookhub.ng/books/b22f4688-055b-4385-a3c8-ff03f7ac3175/", image: "assets/images/elementary-statistical-method-in-education.png" },
@@ -17,10 +46,9 @@ const books = [
 
 const booksGrid = document.getElementById('booksGrid');
 const viewMoreBtn = document.getElementById('viewMoreBtn');
-const catalogSearchBox = document.getElementById('catalogSearchBox');
 const notFoundMessage = document.getElementById('notFoundMessage');
 
-// Function to render books
+// Render Books
 function renderBooks(bookList, hideExcess = true) {
     booksGrid.innerHTML = ""; // Clear previous results
     bookList.forEach((book, index) => {
@@ -39,13 +67,7 @@ function renderBooks(bookList, hideExcess = true) {
     });
 }
 
-// Handle "View More" button click
-viewMoreBtn.addEventListener('click', () => {
-    renderBooks(books, false); // Show all books
-    viewMoreBtn.style.display = "none"; // Hide "View More" button
-});
-
-// Handle search functionality
+// Search Books Function
 function searchBooks(searchTerm) {
     const filteredBooks = books.filter(book =>
         book.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -53,27 +75,36 @@ function searchBooks(searchTerm) {
 
     if (filteredBooks.length > 0) {
         notFoundMessage.style.display = "none";
-        viewMoreBtn.style.display = "none"; // Hide "View More" during search
         renderBooks(filteredBooks, false); // Show all filtered books
     } else {
         booksGrid.innerHTML = "";
-        viewMoreBtn.style.display = "none"; // Hide "View More" when no results
-        notFoundMessage.style.display = "block";
+        notFoundMessage.style.display = "block"; // Show not found message
     }
 }
 
-// Handle catalog search box input
-catalogSearchBox.addEventListener('input', (e) => {
-    const searchTerm = e.target.value.trim();
-    if (searchTerm === "") {
-        notFoundMessage.style.display = "none";
-        renderBooks(books); // Show first 8 books by default
-        viewMoreBtn.style.display = "block"; // Show "View More" button
-    } else {
-        searchBooks(searchTerm);
-    }
+// "View More" Button Handler
+viewMoreBtn.addEventListener('click', () => {
+    renderBooks(books, false); // Show all books
+    viewMoreBtn.style.display = "none"; // Hide "View More" button
 });
 
-// Initial render of books
-renderBooks(books); // Show first 8 books by default
-viewMoreBtn.style.display = "block"; // Show "View More" button initially
+// Initial Render on Books Page
+if (!window.location.search.includes('query')) {
+    renderBooks(books); // Show first 8 books by default
+    viewMoreBtn.style.display = "block"; // Show "View More" button initially
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
