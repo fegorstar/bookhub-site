@@ -68,7 +68,7 @@ h1, h2, h3, p {
 .hero {
     background-color: #fff;
     color: #000;
-    padding: 60px 0; /* Adds spacing around the section */
+    padding: 40px 0; /* Adds spacing around the section */
 }
 
 .hero .row {
