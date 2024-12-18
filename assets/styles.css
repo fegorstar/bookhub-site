@@ -93,6 +93,7 @@ h1, h2, h3, p {
     width: 100%; /* Ensures the image takes the full width */
     max-height: 100%; /* Matches the height to the content */
     border-radius: 8px;
+    margin-top: 80px;
   
 }
 
