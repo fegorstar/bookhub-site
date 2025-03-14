@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookHub Events - Revolutionizing Academic Publishing</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        /* Custom styles for the modal */
+        .speaker img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        .modal-content {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Custom Styles for Tabs */
+        .nav-tabs {
+            margin-bottom: 20px;
+        }
+        .tab-content {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: 0;
+        }
+        /* Map */
+        .embed-responsive {
+            position: relative;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        /* Custom Styles for Event Schedule */
+        .table thead {
+            background-color: #310627;
+            color: white;
+        }
+        .table th, .table td {
+            text-align: center;
+        }
+        /* Horizontal Scroll for Event Schedule */
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        /* Make all columns the same width */
+        .table th, .table td {
+            width: 33%; /* Set equal width for all columns */
+        }
+        /* Prevent long speaker names from stretching columns */
+        .speaker-col {
+            word-wrap: break-word; /* Allow the text to break into another line */
+            max-width: 200px; /* Set a max width for the speaker column */
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #310627;">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/images/Futminna_logo.jpg" alt="FUTMinna Logo" class="navbar-logo img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="open-access.html">Open Access</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="events.html">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="books.html">Catalog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.datasphir.com/bookhub/#contact" target="_blank">BookHub</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <form class="d-flex" role="search" action="books.html" method="GET">
+                        <input class="form-control me-2" type="search" placeholder="Search Books" aria-label="Search" name="query" required>
+                        <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Event Header Section -->
+    <section class="event-header text-center" style="background-color: #f5fff6; ">
+        <div class="container">
+            <img src="assets/images/banner_main.png" alt="Event Banner" class="img-fluid mb-4" style="width: 100%; height: auto;">
+        </div>
+    </section>
+
+    <!-- Event Overview Section -->
+    <section class="event-overview py-5">
+        <div class="container">
+            <h3 class="text-center fw-bold mb-4">About the Event</h3>
+            <p class="text-muted">
+                The "Revolutionizing Academic Publishing in Nigeria" event will focus on the future of Open Access (OA) publishing in Nigerian universities. 
+                We aim to showcase how Nigerian academia can take charge of producing, sharing, and publishing high-quality academic content through OA platforms. 
+                This is an opportunity for professionals, academics, and stakeholders to engage in meaningful discussions about shaping the future of academic publishing in Nigeria.
+            </p>
+        </div>
+    </section>
+
+    <!-- Meet the Speakers Section -->
+    <section class="meet-speakers py-5 bg-light">
+        <div class="container">
+            <h3 class="text-center fw-bold mb-4 py-5">Meet Our Speakers</h3>
+            <div class="row justify-content-center">
+                <!-- Speaker 1: Prof. Faruk Adamu Kuta -->
+                <div class="col-md-4 mb-4">
+                    <div class="speaker text-center" onclick="openModal('kutaModal')">
+                        <img src="assets/images/teams/vc.jpg" alt="Prof. Faruk Adamu Kuta">
+                        <h4>Prof. Faruk Adamu Kuta</h4>
+                        <p>Vice-Chancellor, Federal University of Technology Minna (FUTMinna)</p>
+                    </div>
+                </div>
+                <!-- Speaker 2: Prof. Abdulsalami Kovo -->
+                <div class="col-md-4 mb-4">
+                    <div class="speaker text-center" onclick="openModal('kovoModal')">
+                        <img src="assets/images/teams/kovo.jpg" alt="Professor Abdulsalami Kovo">
+                        <h4>Professor Abdulsalami Kovo</h4>
+                        <p>Professor of Chemical Engineering and Director, Academic Publishing Centre (APC)</p>
+                    </div>
+                </div>
+                <!-- Speaker 3: Dr. Fatimah Jibril Abduldayan -->
+                <div class="col-md-4 mb-4">
+                    <div class="speaker text-center" onclick="openModal('fatimahModal')">
+                        <img src="assets/images/teams/fatima.jpg" alt="Dr. Fatimah Jibril Abduldayan">
+                        <h4>Dr. Fatimah Jibril Abduldayan</h4>
+                        <p>Head, Department of Library and Information Science, FUTMinna</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Schedule with Three Columns Section -->
+    <section class="event-schedule py-5">
+        <div class="container">
+            <h3 class="text-center fw-bold mb-4">Programme of Activities</h3>
+            
+            <!-- Tabs for Day 1 and Day 2 -->
+            <ul class="nav nav-tabs justify-content-center" id="eventTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="day1-tab" data-bs-toggle="tab" href="#day1" role="tab" aria-controls="day1" aria-selected="true">Day 1</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="day2-tab" data-bs-toggle="tab" href="#day2" role="tab" aria-controls="day2" aria-selected="false">Day 2</a>
+                </li>
+            </ul>
+            
+            <!-- Tab content -->
+            <div class="tab-content" id="eventTabsContent">
+                <!-- Day 1 Tab -->
+                <div class="tab-pane fade show active" id="day1" role="tabpanel" aria-labelledby="day1-tab">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Activity</th>
+                                <th class="speaker-col">Speaker</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>All Day</td>
+                                <td>Arrival of Participants</td>
+                                <td>---</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Day 2 Tab -->
+                <div class="tab-pane fade" id="day2" role="tabpanel" aria-labelledby="day2-tab">
+                    <div class="table-container">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Activity</th>
+                                    <th class="speaker-col">Speaker</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>08:30 - 09:00</td>
+                                    <td>Registration</td>
+                                    <td>---</td>
+                                </tr>
+                                <tr>
+                                    <td>09:00 - 09:05</td>
+                                    <td>Welcome Remarks</td>
+                                    <td>Prof. Abdulsalami Sanni Kovo</td>
+                                </tr>
+                                <tr>
+                                    <td>09:05 - 09:10</td>
+                                    <td>Opening Remarks</td>
+                                    <td>Prof. Faruk Adamu Kuta</td>
+                                </tr>
+                                <tr>
+                                    <td>09:10 - 09:15</td>
+                                    <td>Goodwill message from TETFund</td>
+                                    <td>Mr. Abdullahi Baba Imam</td>
+                                </tr>
+                                <tr>
+                                    <td>09:15 - 10:00</td>
+                                    <td>From Print to Open: Revolutionising Academic Publishing</td>
+                                    <td>Dr. Fatimah Jibril Abduldayan</td>
+                                </tr>
+                                <tr>
+                                    <td>10:00 - 10:30</td>
+                                    <td>Tea Break + Group Photographs</td>
+                                    <td>---</td>
+                                </tr>
+                                <tr>
+                                    <td>10:30 - 11:30</td>
+                                    <td>BookHub: Enabling Seamless Open Access Book Publishing</td>
+                                    <td>Ms. Florence Iweha & Mr. Oreva Orior</td>
+                                </tr>
+                                <tr>
+                                    <td>11:30 - 11:50</td>
+                                    <td>Shaping the Future of Research</td>
+                                    <td>Dr. Sadiat Adetoro Salau</td>
+                                </tr>
+                                <tr>
+                                    <td>11:30 - 13:00</td>
+                                    <td>Panel Discussion: Policy, Publishing, and Research</td>
+                                    <td>Prof. Ambali Saka Abdulkareem, Prof. Chiemela Enyinnaya Chinma, Prof. Morenikeji O. Oluwole, Dr. Fatimah J. Abduldayan</td>
+                                </tr>
+                                <tr>
+                                    <td>13:00 - 14:15</td>
+                                    <td>Lunch & Networking</td>
+                                    <td>---</td>
+                                </tr>
+                                <tr>
+                                    <td>14:15 - 15:45</td>
+                                    <td>Catalysing a National Open Access Book Ecosystem</td>
+                                    <td>Prof. Albert Agbegunde, Prof. Manu Donga, Dr. Umaru Musa Sani, Mr. Sebastian Sanke, Mr. Ahmad Ibrahim Jae, Prof. Olubiyi Adewale, Dr. Mojisola Shodipe</td>
+                                </tr>
+                                <tr>
+                                    <td>15:45 - 16:00</td>
+                                    <td>Wrap-up</td>
+                                    <td>Dr. Fatimah Jibril Abduldayan, Prof. Abdulsalami Sanni Kovo</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Location (Map & Contact Info) -->
+    <section class="event-location py-5 bg-light">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-4">Event Location</h3>
+                <!-- Map Embed -->
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.7134181921083!2d6.4491793!3d9.533608399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104c7508cff37833%3A0xc8b3637f075a8b04!2sFederal%20University%20of%20Technology%20Minna%20Gidan%20Kwano!5e0!3m2!1sen!2sng!4v1741986773346!5m2!1sen!2sng" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <!-- Address and Contact Information -->
+            <div class="py-5 text-center">
+                <div class="col-md-12">
+                    <p><strong>Address:</strong> SICT Auditorium, Gidan Kwano Campus, Federal University of Technology Minna (FUTMinna), Niger State, Nigeria</p>
+                </div>
+                <div class="col-md-12">
+                    <p><strong>Contact:</strong> <a href="tel:+2341234567890">+234 123 456 7890</a> | <a href="mailto:event@futminna.edu.ng">event@futminna.edu.ng</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-3" style="background-color: #310627;">
+        <div class="container text-center">
+            <p>&copy; 2024 BookHub. All rights reserved.</p>
+            <p>
+                <a href="https://futminna.edu.ng/home/" target="_blank">FUTMinna</a> |
+                <a href="https://openbookcollective.org/" target="_blank">Open Book Collective</a> |
+                <a href="https://datasphir.com/bookhub" target="_blank">Datasphir</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies (Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Modal JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@comake/skql-js-engine@0.14.0/dist/index.min.js"></script>
+
+    <script>
+        // Function to open modals
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        // Function to close modals
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+    <!-- Modal content for each speaker -->
+    <!-- Modal for Prof. Faruk Adamu Kuta -->
+    <div id="kutaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('kutaModal')">&times;</span>
+            <h2>Prof. Faruk Adamu Kuta</h2>
+            <p>
+                Professor Faruk Adamu Kuta is the Vice-Chancellor of the Federal University of Technology Minna (FUTMinna). Born on October 26, 1972, in Kuta, Shiroro Local Government Area, Niger State, he has held various academic and administrative positions within the university. Prof. Kuta attended Government Science Teachers College Wushishi and the Federal College of Education, Kontangora, before earning his PhD in Medical Microbiology from Abubakar Tafawa Balewa University, Bauchi. Prior to his appointment as Vice-Chancellor, he served as Deputy Vice-Chancellor (Academic) at FUTMinna.
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal for Professor Abdulsalami Kovo -->
+    <div id="kovoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('kovoModal')">&times;</span>
+            <h2>Professor Abdulsalami Kovo</h2>
+            <p>
+                Professor Abdulsalami Kovo is a distinguished academic in Chemical Engineering and currently serves as the Director of the Academic Publishing Centre (APC) at the Federal University of Technology Minna (FUTMinna). He earned his PhD in Chemical Engineering and has contributed significantly to research in sustainable chemical processes and renewable energy solutions. Prof. Kovo is also involved in various initiatives aimed at enhancing academic publishing practices within the university and beyond.
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal for Dr. Fatimah Jibril Abduldayan -->
+    <div id="fatimahModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('fatimahModal')">&times;</span>
+            <h2>Dr. Fatimah Jibril Abduldayan</h2>
+            <p>
+                Dr. Fatimah Jibril Abduldayan is the Head of the Department of Library and Information Science at the Federal University of Technology Minna (FUTMinna). She is also the Team Lead for LIBSENSE Nigeria, advocating for open access and research data management in Nigeria. Dr. Abduldayan has been instrumental in leading nationwide initiatives to enhance research data management, open access publishing, and research assessment reforms. She actively contributes to policy development, capacity building, and sustainable publishing efforts within the academic community.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -59,7 +59,7 @@ function renderBooks(bookList, hideExcess = true) {
                     <img src="${book.image}" alt="${book.title}" class="card-img-top book-image">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">${book.title}</h5>
-                        <a href="${book.link}" target="_blank" class="btn btn-primary mt-auto">Read</a>
+                        <a href="${book.link}" target="_blank" class="btn mt-auto" style="background-color: #310627; color: #fff;">Read</a>
                     </div>
                 </div>
             </div>

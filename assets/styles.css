@@ -4,7 +4,7 @@
 /* Root Variables */
 /* ============================== */
 :root {
-    --bs-primary: #004080; /* Dark blue */
+    --bs-primary: #310627; /* Dark blue */
     --dark-blue: #003366; /* Dark blue for navbar and footer */
     --accent-yellow: #ffcc00; /* Yellow for buttons and accents */
 }
@@ -16,7 +16,7 @@ body {
     padding-top: 70px; /* Offset for fixed navbar */
     background-color: #f9f9f9;
     color: #333;
-    font-family: Arial, sans-serif;
+    font-family: 'Ubuntu';
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ h1, h2, h3, p {
 /* Navbar */
 /* ============================== */
 .navbar {
-    background-color: var(--dark-blue);
+    background-color: #310627;
 }
 
 .navbar-logo {
@@ -248,7 +248,7 @@ h1, h2, h3, p {
 /* Footer */
 /* ============================== */
 footer {
-    background-color: var(--dark-blue);
+    background-color: #310627;
     color: white;
     text-align: center;
     padding: 20px 0; 
