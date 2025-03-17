@@ -191,12 +191,11 @@
 </section>
 
 
-    <!-- Meet the Speakers Section -->
-    <section class="meet-speakers py-2 bg-light">
+    <!-- Meet the Speakers Section <section class="meet-speakers py-2 bg-light">
         <div class="container">
             <h3 class="text-center fw-bold mb-4 py-5">Meet Our Speakers</h3>
             <div class="row justify-content-center">
-                <!-- Speaker 1: Prof. Faruk Adamu Kuta -->
+                <!-- Speaker 1: Prof. Faruk Adamu Kuta
                 <div class="col-md-4 mb-4">
                     <div class="speaker text-center" onclick="openModal('kutaModal')">
                         <img src="assets/images/teams/vc.jpg" alt="Prof. Faruk Adamu Kuta">
@@ -204,7 +203,7 @@
                         <p>Vice-Chancellor, Federal University of Technology Minna (FUTMinna)</p>
                     </div>
                 </div>
-                <!-- Speaker 2: Prof. Abdulsalami Kovo -->
+                <!-- Speaker 2: Prof. Abdulsalami Kovo 
                 <div class="col-md-4 mb-4">
                     <div class="speaker text-center" onclick="openModal('kovoModal')">
                         <img src="assets/images/teams/kovo.jpg" alt="Professor Abdulsalami Kovo">
@@ -212,7 +211,7 @@
                         <p>Professor of Chemical Engineering and Director, Academic Publishing Centre (APC)</p>
                     </div>
                 </div>
-                <!-- Speaker 3: Dr. Fatimah Jibril Abduldayan -->
+                <!-- Speaker 3: Dr. Fatimah Jibril Abduldayan
                 <div class="col-md-4 mb-4">
                     <div class="speaker text-center" onclick="openModal('fatimahModal')">
                         <img src="assets/images/teams/fatima.jpg" alt="Dr. Fatimah Jibril Abduldayan">
@@ -221,104 +220,126 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </div> </section>--> 
 
-    <!-- Event Schedule with Three Columns Section -->
-    <!-- Event Schedule Section -->
+ <!-- Event Schedule Section -->
+<!-- Event Schedule Section -->
 <section class="event-schedule py-5">
     <div class="container">
         <h3 class="text-center fw-bold mb-4">Programme of Activities</h3>
 
         <!-- Programme Table -->
         <div class="table-container">
-            <table class="table table-bordered">
-                <thead>
+            <table class="table table-bordered" style="border-collapse: collapse; width: 100%; table-layout: fixed;">
+                <thead style="background-color: #310627; color: white;">
                     <tr>
-                        <th>Time</th>
-                        <th>Agenda</th>
-                        <th>Speaker</th>
-                        <th>Moderator</th>
+                        <th style="width: 25%; text-align: center; padding: 10px; background-color: #610550; color: white;">Time</th>
+                        <th style="width: 35%; text-align: center; padding: 10px; background-color: #610550; color: white;">Agenda</th>
+                        <th style="width: 20%; text-align: center; padding: 10px; background-color: #610550; color: white;">Speaker</th>
+                        <th style="width: 20%; text-align: center; padding: 10px; background-color: #610550; color: white;">Moderator</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- SESSION I -->
+                    <tr>
+                        <td colspan="4" class="text-center" style="background-color: #659cd4; font-weight: bold; color: white;">
+                            <strong>SESSION I: OPENING CEREMONY</strong>
+                        </td>
+                    </tr>
                     <tr>
                         <td>08:30 - 09:00</td>
                         <td>Registration</td>
                         <td>---</td>
-                        <td>---</td>
+                        <td rowspan="5" style="text-align: center; vertical-align: middle;">---</td> <!-- Merged Moderator cell for Session I -->
                     </tr>
                     <tr>
                         <td>09:00 - 09:05</td>
                         <td>Welcome Remarks</td>
-                        <td>Prof. Abdulsalami Sanni Kovo (Director, Academic Publishing Centre, FUTMinna)</td>
-                        <td>---</td>
+                        <td><strong>Prof. Abdulsalami Sanni Kovo</strong> (Director, Academic Publishing Centre, FUTMinna)</td>
                     </tr>
                     <tr>
                         <td>09:05 - 09:10</td>
                         <td>Opening Remarks</td>
-                        <td>Prof. Faruk Adamu Kuta (Vice-Chancellor, FUTMinna)</td>
-                        <td>---</td>
+                        <td><strong>Prof. Faruk Adamu Kuta</strong> (Vice-Chancellor, FUTMinna)</td>
                     </tr>
                     <tr>
                         <td>09:10 - 09:15</td>
                         <td>Goodwill message from TETFund</td>
-                        <td>Mr. Abdullahi Baba Imam (Director, Education Support Services, TETFund)</td>
-                        <td>---</td>
+                        <td><strong>Mr. Abdullahi Baba Imam</strong> (Director, Education Support Services, TETFund)</td>
                     </tr>
                     <tr>
                         <td>09:15 - 10:00</td>
                         <td>From Print to Open: Revolutionising Academic Publishing with the FUTMinna BookHub Open Access Initiative</td>
-                        <td>Dr. Fatimah Jibril Abduldayan (Head of Department, Library and Information Science, FUTMinna)</td>
-                        <td>---</td>
+                        <td><strong>Dr. Fatimah Jibril Abduldayan</strong> (Head of Department, Library and Information Science, FUTMinna)</td>
                     </tr>
-                    <tr>
-                        <td>10:00 - 10:30</td>
-                        <td>Tea Break + Group Photographs</td>
-                        <td>---</td>
-                        <td>---</td>
+
+                    <!-- Tea Break -->
+                    <tr style="background-color: #f8f9fa; text-align: center;">
+                        <td colspan="4"><strong>10:00 - 10:30</strong> <br> Tea Break + Group Photographs</td>
                     </tr>
+
+                    <!-- BookHub Session -->
                     <tr>
                         <td>10:30 - 11:30</td>
-                        <td>BookHub: Enabling Seamless Open Access Book Publishing</td>
-                        <td>Ms. Florence Iweha & Mr. Oreva Orior (Dataphsih Solutions Limited)</td>
-                        <td>---</td>
+                        <td><strong>BookHub: Enabling Seamless Open Access Book Publishing</strong></td>
+                        <td><strong>Ms. Florence Iweha</strong> & <strong>Mr. Oreva Orior</strong> (Datasphir Solutions Limited)</td>
+                        <td>---</td> <!-- No moderator here -->
+                    </tr>
+
+                    <!-- SESSION II -->
+                    <tr>
+                        <td colspan="4" class="text-center" style="background-color: #659cd4; font-weight: bold; color: white;">SESSION II: BRIDGING RESEARCH, PUBLISHING & POLICY: THE FUTURE OF OPEN ACCESS AT FUTMINNA</td>
                     </tr>
                     <tr>
-                        <td>11:30 - 11:50</td>
-                        <td>Shaping the Future of Research: The Case for Open Access & Open Science at FUTMinna</td>
-                        <td>Prof. Ambali Saka Abdulkareem (Chairman, FUTMinna Research Policy Committee)</td>
-                        <td>Dr. Sadiat Adetoro Salau (Head, Systems and Multimedia Division, FUTMinna Library)</td>
+                        <td style="text-align: center; padding: 8px;">11:30 - 11:50</td>
+                        <td><strong>Shaping the Future of Research: The Case for Open Access & Open Science at FUTMinna</strong></td>
+                        <td><strong>Dr Sadiat Adetoro Salau</strong><br>Head, Systems and Multimedia Division, FUT Minna Library</td>
+                        <td rowspan="2"><strong>Prof Conrad A. Omonhinmin</strong><br>Dean, School of Postgraduate Studies & Co-ordinator, Open Access/Science, Covenant University, Ota, Ogun State</td>
                     </tr>
                     <tr>
-                        <td>11:50 - 13:00</td>
-                        <td>Panel Discussion: Policy, Publishing, and Research: Advancing Open Access at FUTMinna</td>
-                        <td>Prof. Chiemela Enyinnaya Chinma (Director of Research and Innovation, FUTMinna) <br> Prof. Morenikeji O. Oluwole (Editor, Nigerian Journal of Technological Research, FUTMinna) <br> Dr. Fatimah Jibril Abduldayan (Head, Department of Library and Information Science, FUTMinna)</td>
-                        <td>Prof. Chiemela Enyinnaya Chinma</td>
+                        <td style="text-align: center; padding: 8px;">11:50 - 13:00</td>
+                        <td><strong>Panel Discussion: Policy, Publishing, and Research: Advancing Open Access at FUTMinna</strong></td>
+                        <td><strong>Prof Ambali Saka Abdulkareem</strong><br>Chairman, FUTMinna Research Policy Committee<br><strong>Prof Chiemela Enyinnaya Chinma</strong><br>Director of Research and Innovation, FUTMinna<br><strong>Prof Morenikeji O. Oluwole</strong><br>Editor, Nigerian Journal of Technological Research, FUTMinna<br><strong>Dr Fatimah Jibril Abduldayan</strong><br>Head of Department, Library and Information Science, FUTMinna</td>
+                    </tr>
+
+                    <!-- Lunch & Networking -->
+                    <tr style="background-color: #f8f9fa; text-align: center;">
+                        <td colspan="4"><strong>13:00 - 14:15</strong> <br> Lunch & Networking</td>
+                    </tr>
+
+                    <!-- SESSION III -->
+                    <tr>
+                        <td colspan="4" class="text-center" style="background-color: #659cd4; font-weight: bold; color: white;">SESSION III: TOWARDS AN EQUITABLE AND ENDURING ACADEMIC BOOK PUBLISHING FRAMEWORK FOR NIGERIA</td>
                     </tr>
                     <tr>
-                        <td>13:00 - 14:15</td>
-                        <td>Lunch & Networking</td>
-                        <td>---</td>
-                        <td>---</td>
+                        <td style="text-align: center; padding: 8px;">14:15 - 15:45</td>
+                        <td><strong>Catalysing a National Open Access Book Ecosystem</strong></td>
+                        <td>
+                            <strong>Prof Albert Agbegunde</strong><br>Chair, TETFUND Advisory Group<br>
+                            <strong>Prof Manu Donga</strong><br>Director, APC North-East Zone, Modibbo Adama University of Technology, Yola (MAUTECH)<br>
+                            <strong>Dr Umaru Musa Sani</strong><br>Director, APC North-West Zone, Usmanu Danfodiyo University, Sokoto (UDUS)<br>
+                            <strong>Mr. Sebastian Sanke</strong><br>GM, Jos University Press<br>
+                            <strong>Mr. Ahmad Ibrahim Jae</strong><br>Director, Ahmadu Bello University Press<br>
+                            <strong>Prof Olubayi Adewale</strong><br>Director, National Open University of Nigeria (NOUN) Press<br>
+                            <strong>Dr Nojisola Shodipe</strong><br>Director, APC South-West Zone, University of Lagos (UNILAG)
+                        </td>
+                        <td rowspan="2"><strong>APC North-Central Zone, FUTMinna</strong></td>
                     </tr>
+
+                    <!-- Wrap-up -->
                     <tr>
-                        <td>14:15 - 15:45</td>
-                        <td>Catalysing a National Open Access Book Ecosystem</td>
-                        <td>Prof. Albert Agbegunde (Chair, TETFund Advisory Group) <br> Prof. Manu Donga (Director, APC North-East Zone, Mubi University of Technology) <br> Dr. Umaru Musa Sani (Director, APC North-West Zone, Usman Danfodiyo University)</td>
-                        <td>Prof. Chiemela Enyinnaya Chinma</td>
-                    </tr>
-                    <tr>
-                        <td>15:45 - 16:00</td>
-                        <td>Wrap-up</td>
-                        <td>Dr. Fatimah Jibril Abduldayan (Head of Department, Library and Information Science, FUTMinna) <br> Prof. Abdulsalami Sanni Kovo (Director, APC FUTMinna)</td>
-                        <td>---</td>
+                        <td style="text-align: center; padding: 8px;">15:45 - 16:00</td>
+                        <td><strong>WRAP-UP</strong></td>
+                        <td><strong>Dr Fatimah Jibril Abduldayan</strong><br>Head of Department, Library and Information Science, FUTMinna<br><strong>Prof Abdulsalami Sanni Kovo</strong><br>Director, Academic Publishing Center, FUTMinna</td>
+                        <td></td> <!-- No moderator for Wrap-Up, merged column -->
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </section>
+
+
 
 
     <!-- Event Location (Map & Contact Info) -->
