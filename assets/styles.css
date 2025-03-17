@@ -1,4 +1,7 @@
-/* styles.css */
+/* ============================== */
+/* Importing Google Fonts */
+/* ============================== */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
 /* ============================== */
 /* Root Variables */
@@ -16,7 +19,7 @@ body {
     padding-top: 70px; /* Offset for fixed navbar */
     background-color: #f9f9f9;
     color: #333;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', sans-serif; /* Updated font-family */
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -63,8 +66,6 @@ h1, h2, h3, p {
 /* ============================== */
 /* Hero Section */
 /* ============================== */
-/* Hero Section Styling */
-/* Hero Section Styling */
 .hero {
     background-color: #fff;
     color: #000;
@@ -86,7 +87,6 @@ h1, h2, h3, p {
     display: flex;
     align-items: center; /* Center image vertically */
     justify-content: center;
-   
 }
 
 .hero .col-lg-5 img {
@@ -94,7 +94,6 @@ h1, h2, h3, p {
     max-height: 100%; /* Matches the height to the content */
     border-radius: 8px;
     margin-top: 80px;
-  
 }
 
 .hero h2 {
@@ -125,7 +124,6 @@ h1, h2, h3, p {
     color: #fff;
 }
 
-
 /* ============================== */
 /* Our Team Section */
 /* ============================== */
@@ -136,8 +134,6 @@ h1, h2, h3, p {
     position: relative;
     text-align: center;
 }
-
-
 
 .our-team .speaker {
     cursor: pointer;
@@ -213,6 +209,7 @@ h1, h2, h3, p {
     background-color: #e2e3e5;
     padding: 60px 20px; /* Padding top and bottom */
 }
+
 /* Section Spacing */
 .section-grey {
     background-color: #e2e3e5;
@@ -254,7 +251,6 @@ footer {
     padding: 20px 0; 
     margin-top: auto;
 }
-
 
 footer a {
     color: var(--accent-yellow);
@@ -305,8 +301,6 @@ footer a:hover {
     color: #000;
     text-decoration: none;
 }
-
-
 
 /* ============================== */
 /* Responsive Adjustments */
