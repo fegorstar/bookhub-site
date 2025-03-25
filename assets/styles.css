@@ -400,13 +400,42 @@ footer a:hover {
     }
 }
 
+/* Custom styles for table responsiveness */
+/* Ensure horizontal scrolling without squishing */
 .table-responsive {
-    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
 }
 
+/* Remove fixed layout for dynamic table resizing */
+.table {
+    width: 100%; /* Let it fill available space */
+    table-layout: auto; /* Auto layout for flexible column widths */
+}
+
+/* Prevent squishing and allow text wrapping inside cells */
 .table th, .table td {
-    white-space: normal;
-    vertical-align: middle;
+    word-wrap: break-word; /* Allow text to break onto next line */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
 }
 
+/* Apply a minimum width for columns so they do not shrink too much */
+.table th, .table td {
+    min-width: 150px; /* You can adjust this depending on your content */
+}
+
+/* Optional: Fixed header for scrolling tables */
+.table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #310627; /* Sticky header background */
+    z-index: 1;
+}
+
+/* Remove unnecessary styles for a clean table */
+.table th, .table td {
+    white-space: normal; /* Allow wrapping inside cells */
+    text-align: center;
+}
