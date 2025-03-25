@@ -389,3 +389,24 @@ footer a:hover {
         padding: 40px 20px;
     }
 }
+
+/* Add these or update existing styles inside <style> */
+@media (max-width: 767.98px) {
+    .table th,
+    .table td {
+        white-space: nowrap;       /* Prevent breaking into multiple lines */
+        font-size: 14px;           /* Slightly smaller text */
+        padding: 8px !important;   /* More compact padding */
+    }
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table th, .table td {
+    white-space: normal;
+    vertical-align: middle;
+}
+
