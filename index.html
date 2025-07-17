@@ -138,19 +138,64 @@
                         >, FUTMinna is turning these discussions into action, setting a precedent for innovation in Nigerian
                         academia and beyond.
                     </p>
-                    <a
-                        href="open-access.html"
-                        class="btn"
-                        style="background-color: #310627; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;"
-                        ><i class="bi bi-arrow-right-circle"></i> View Project Details</a
-                    >
-                    <a
-                        href="https://apc-minna.bookhub.ng/assets/images/files/futminna_OA_workshop_report.pdf"
-                        target="_blank"
-                        class="btn"
-                        style="background-color: #003366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-left: 10px;"
-                        ><i class="bi bi-file-earmark-pdf"></i> FUTMinna OA Workshop Report</a
-                    >
+
+                    <!-- Buttons Container -->
+                    <div class="d-flex flex-nowrap align-items-center mt-3">
+                        <!-- View Project Details Button -->
+                        <a
+                            href="open-access.html"
+                            class="btn me-2"
+                            style="background-color: #003366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;"
+                        >
+                            <i class="bi bi-arrow-right-circle"></i> View Project Details
+                        </a>
+
+                        <!-- Workshop Reports Dropdown -->
+                        <div class="dropdown me-2">
+                            <button
+                                class="btn dropdown-toggle"
+                                type="button"
+                                id="workshopReportsDropdown"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                style="background-color: #003366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;"
+                            >
+                                <i class="bi bi-download"></i> Workshop Reports
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="workshopReportsDropdown">
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="assets/images/files/futminna_OA_workshop_report.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i class="bi bi-file-earmark-pdf"></i> FUTMinna OA Workshop Report
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="assets/images/files/BookHub_Authoring_Collaborative_Workshop_Report.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i class="bi bi-file-earmark-pdf"></i> BookHub Authoring Collaborative Workshop Report
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- APC OA Framework Button -->
+                        <a
+                            href="assets/images//files/APC_Framework_Signatures.pdf"
+                            target="_blank"
+                            class="btn"
+                            style="background-color: #003366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;"
+                        >
+                            <i class="bi bi-journal-bookmark"></i> APC OA Framework
+                        </a>
+                    </div>
                 </div>
                 <div class="col-lg-5 text-center">
                     <img
@@ -162,8 +207,6 @@
             </div>
         </div>
     </section>
-
-    <!-- PDF Viewer Section removed to save space -->
 
     <!-- Eko-Konnect Section -->
     <section class="section-grey mb-4">
