@@ -140,7 +140,7 @@
                     </p>
 
                     <!-- Buttons Container -->
-                    <div class="d-flex flex-wrap md:flex-nowrap gap-3 md:gap-0 align-items-center mt-3">
+                    <div class="d-flex flex-wrap flex-md-nowrap gap-3 gap-md-0 align-items-center mt-3">
                         <!-- View Project Details Button -->
                         <a
                             href="open-access.html"
@@ -435,17 +435,28 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const modalEl = document.getElementById('saveTheDateModal');
-      const modal    = new bootstrap.Modal(modalEl,{backdrop:'static',keyboard:false});
-  
-      /* Wait for the hero image to load to avoid flashes ----------------- */
-      const hero      = modalEl.querySelector('img');
-      if (hero.complete) modal.show();    // cached case
-      else hero.addEventListener('load', () => modal.show());
-  
-      /* Lower the backdrop so navbars stay on top if needed -------------- */
-      modalEl.addEventListener('shown.bs.modal', () => {
-        document.querySelector('.modal-backdrop').style.zIndex = '1';
-      });
+      const modal = new bootstrap.Modal(modalEl, { backdrop: 'static', keyboard: false });
+
+      // Check local storage for 'lastViewedNationalConference' key
+      const lastViewed = localStorage.getItem('lastViewedNationalConference');
+      const today = new Date().toISOString().split('T')[0];
+
+      if (lastViewed !== today) {
+        /* Wait for the hero image to load to avoid flashes ----------------- */
+        const hero = modalEl.querySelector('img');
+        if (hero.complete) modal.show();    // cached case
+        else hero.addEventListener('load', () => modal.show());
+
+        /* Lower the backdrop so navbars stay on top if needed -------------- */
+        modalEl.addEventListener('shown.bs.modal', () => {
+          document.querySelector('.modal-backdrop').style.zIndex = '1';
+        });
+
+        // Set local storage with today's date when the close button is clicked
+        modalEl.querySelector('.btn-close').addEventListener('click', () => {
+          localStorage.setItem('lastViewedNationalConference', today);
+        });
+      }
     });
   </script>
   
