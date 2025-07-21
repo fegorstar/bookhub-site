@@ -140,7 +140,7 @@
                     </p>
 
                     <!-- Buttons Container -->
-                    <div class="d-flex flex-nowrap align-items-center mt-3">
+                    <div class="d-flex flex-wrap md:flex-nowrap gap-3 md:gap-0 align-items-center mt-3">
                         <!-- View Project Details Button -->
                         <a
                             href="open-access.html"
@@ -303,6 +303,152 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@comake/skql-js-engine@0.14.0/dist/index.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 1️⃣  <style> – place after your other styles -->
+<style>
+    :root {
+      --modal-radius: 1.25rem;
+      --ring-size: 3px;
+      --ring-gradient: linear-gradient(135deg,#06b6d4 0%,#8b5cf6 100%);
+    }
+  
+    /* ===== Base modal ===================================================== */
+    #saveTheDateModal .modal-dialog {
+      max-width: 100%;
+      max-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .5s cubic-bezier(.25,.8,.25,1);
+      transform: scale(.96);            /* tiny shrink pre‑animation */
+      overflow-x: hidden;               /* Prevent horizontal scrolling */
+    }
+    #saveTheDateModal.show .modal-dialog {
+      transform: scale(1);              /* zoom‑in when .modal.fade.show is added */
+    }
+  
+    #saveTheDateModal .modal-content {
+      position: relative;
+      border: 0;
+      border-radius: var(--modal-radius);
+      overflow: hidden;
+      background: transparent;
+      box-shadow: 0 40px 80px rgba(0,0,0,.55);
+      isolation: isolate;               /* clips glassy ::before blur */
+    }
+  
+    /* glassy frosted sheet inside ----------------------------------------- */
+    #saveTheDateModal .modal-content::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: -1;
+    }
+  
+    /* ring accent (only on large screens) --------------------------------- */
+    @media (min-width: 576px) {
+      #saveTheDateModal .modal-content::after {
+        content: '';
+        position: absolute;
+        inset: calc(-1 * var(--ring-size));
+        border-radius: calc(var(--modal-radius) + var(--ring-size));
+        background: var(--ring-gradient);
+        opacity: 0;
+        transition: opacity .35s;
+        pointer-events: none;
+        z-index: -2;
+      }
+      #saveTheDateModal .modal-content:hover::after {
+        opacity: .85;                   /* gentle glow on hover */
+      }
+    }
+  
+    /* image --------------------------------------------------------------- */
+    #saveTheDateModal img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+  
+    /* close button -------------------------------------------------------- */
+    #saveTheDateModal .btn-close {
+      position: absolute;
+      top: -0.1rem;
+      right: .85rem;
+      z-index: 3;
+      width: 2.25rem; height: 2.25rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,.25);
+      backdrop-filter: blur(4px);
+      --bs-btn-close-color: #fff;
+      --bs-btn-close-focus-shadow: 0 0 0 0.25rem rgba(255,255,255,.5);
+      transition: transform .25s, box-shadow .25s;
+    }
+    #saveTheDateModal .btn-close:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 .25rem rgba(255,255,255,.35);
+    }
+    /* pulsing dot effect */
+    #saveTheDateModal .btn-close::after {
+      content:'';
+      position:absolute; inset:0;
+      border-radius:50%;
+      box-shadow: 0 0 0 0 rgba(255,255,255,.6);
+      animation: pulseClose 2s infinite;
+    }
+    @keyframes pulseClose {
+      0%   {box-shadow:0 0 0 0   rgba(255,255,255,.6);}
+      70%  {box-shadow:0 0 0 .75rem rgba(255,255,255,0);}
+      100% {box-shadow:0 0 0 0   rgba(255,255,255,0);}
+    }
+  
+    /* XS phones ----------------------------------------------------------- */
+    @media (max-width:575.98px){
+      #saveTheDateModal .modal-dialog,
+      #saveTheDateModal .modal-content{
+        border-radius:0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;             /* Prevent horizontal scrolling on small screens */
+      }
+      #saveTheDateModal .btn-close{top:133px;right:.65rem;}
+    }
+  </style>
+  
+  <!-- 2️⃣  Modal markup -->
+  <div class="modal fade" id="saveTheDateModal" style="padding-top: 0px;transform:scale(1.3);z-index: 1000000;" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+      <div class="modal-content">
+        <button type="button" class="btn-close text-[red] relative top-[30px]" style="color: rgb(255, 141, 141);background-color: rgb(0, 0, 0);" data-bs-dismiss="modal" aria-label="Close">X</button>
+        <img src="./assets/images/Save%20the%20Date%20(1)-min.jpg"
+             alt="Save the Date – National Conference" />
+      </div>
+    </div>
+  </div>
+  
+  <!-- 3️⃣  Bootstrap + auto‑trigger (place after Bootstrap JS) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const modalEl = document.getElementById('saveTheDateModal');
+      const modal    = new bootstrap.Modal(modalEl,{backdrop:'static',keyboard:false});
+  
+      /* Wait for the hero image to load to avoid flashes ----------------- */
+      const hero      = modalEl.querySelector('img');
+      if (hero.complete) modal.show();    // cached case
+      else hero.addEventListener('load', () => modal.show());
+  
+      /* Lower the backdrop so navbars stay on top if needed -------------- */
+      modalEl.addEventListener('shown.bs.modal', () => {
+        document.querySelector('.modal-backdrop').style.zIndex = '1';
+      });
+    });
+  </script>
+  
 </body>
 
 </html>
