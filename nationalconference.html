@@ -38,7 +38,7 @@
         .section-title {
             font-weight: 700;
             font-size: clamp(1.6rem, 1.1vw+1.3rem, 2.25rem);
-            text-transform: uppercase;
+            text-transform: sentence-case;
             letter-spacing: .5px;
             display: inline-block;
             padding-bottom: .35rem;
@@ -153,11 +153,12 @@
             color: #fff;
             font-weight: 600;
             border: none;
+            font-size: 1rem;
             transition: transform .3s;
         }
 
         .btn-cta:hover {
-            transform: translateY(-3px);
+            /* transform: translateY(-3px); */
         }
 
         /* ========= DOWNLOAD CARDS ========= */
@@ -195,7 +196,7 @@
             border-radius: 1rem;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
-            border: 4px solid var(--teal-light);
+            /* border: 4px solid var(--teal-light); */
         }
 
         /* dark inputs override */
@@ -455,79 +456,92 @@
 
         /* gradient definition uses your teal→navy */
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navbar = document.getElementById("navbar");
+            const onScroll = () => {
+                if (window.scrollY > 10) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            };
+            // initial check in case page is loaded scrolled
+            onScroll();
+            window.addEventListener("scroll", onScroll);
+        });
+    </script>
 </head>
 
-<body>
+<body style="padding-top: 0px;">
+    <style>
+        .navbar {
+            transition: background-color .5s ease;
+            background-color: transparent;
+            /* default */
+        }
+
+        .scrolled {
+            background-color: #13333d !important;
+        }
+    </style>
 
     <!-- ========= NAVBAR (UNCHANGED) ========= -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top ">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/Futminna_logo.jpg" alt="FUTMinna Logo"
-                    class="navbar-logo img-fluid" /></a>
+            <a class="navbar-brand invisible" href="index.html">
+                <img src="assets/images/Futminna_logo.jpg" alt="FUTMinna Logo" class="navbar-logo img-fluid " />
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
-                    class="navbar-toggler-icon"></span></button>
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border-color: white;">
+            <i class="bi bi-list" style="color: white;"></i>
+            </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="open-access.html">The Project</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="eventsDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">Events</a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="eventsDropdown">
-                            <li>
-                                <a class="dropdown-item" href="https://apc-minna.bookhub.ng/events.html" target="_blank"
-                                    rel="noopener noreferrer">
-                                    FUTMinna OA
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://indico.wacren.net/event/246/" target="_blank"
-                                    rel="noopener noreferrer">
-                                    BookHub Collaborative Authoring Workshop
-                                </a>
-                            </li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-innovative">About</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#" target="_blank" rel="noopener noreferrer">Get
-                            Involved</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#speakers">Speakers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Venue</a>
+                    </li>
                     <li class="nav-item ms-3">
-                        <form class="d-flex" role="search" action="#" method="GET"><input class="form-control me-2"
-                                type="search" placeholder="Search Books" aria-label="Search" name="query"
-                                required /><button class="btn btn-outline-light" type="submit"><i
-                                    class="bi bi-search"></i></button></form>
+                        <a href="#contact" class="btn btn-cta shadow" style="font-size:medium;  background:#00BFA6; color:#ffffff;font-weight:600;padding:.45rem 1.2rem; border-radius:.4rem;text-decoration:none;">
+                            Contact&nbsp;Us
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- ========= HERO (unchanged from previous) ========= -->
-    <!-- ===== HERO : NOUN Conference 2025 ===== -->
-    <section class="hero" style="background:#002B36; color:#fff; padding:7rem 0 5rem; overflow:hidden; position:relative;">
+
+
+    <section class="hero"
+        style="background:#002B36; color:#fff; padding:7rem 0 5rem; overflow:hidden; position:relative;">
         <div
             style="background: url('assets/images/Save the Date (1)-min.jpg') center/cover no-repeat; filter: blur(5px); position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.5; z-index: 1;">
         </div>
         <div style="position: relative; z-index: 2;">
-            <!-- decorative starburst -->
             <span style="position:absolute;top:-6rem;right:-6rem;width:18rem;height:18rem;
       background:radial-gradient(circle,#00bfa633 0%,#00bfa600 70%);
       filter:blur(90px);pointer-events:none;"></span>
 
             <div class="container">
                 <div class="row align-items-center g-5">
-                    <!-- ─────────── TEXT (left) ─────────── -->
                     <div class="col-md-6 order-2 order-md-1">
-                        <h1 style="font-size:clamp(2.3rem,5vw+1rem,3.8rem);
-          font-weight:700;line-height:1.1;margin-bottom:.4em;">
-                            Open &amp; Distance Learning <br>
+                        <h1
+                            style="font-size:clamp(2.3rem,5vw+1rem,3.8rem); font-weight:700;line-height:1.1;margin-bottom:.4em;">
+                            National Open Access Stakeholders <br>
                             <span style="color:#00BFA6;">Conference&nbsp;2025</span>
                         </h1>
 
-                        <!-- COUNTDOWN -->
                         <p class="lead mb-3" style="font-size:1.2rem;font-weight:500;">
                             Conference begins in:&nbsp;
-                            <!-- ‑‑‑‑‑ COUNTDOWN CARD DECK ‑‑‑‑‑ -->
-                        <div id="countdown" class="countdown" aria-label="Conference countdown" style="display: flex; justify-content: space-between;">
+                        <div id="countdown" class="countdown" aria-label="Conference countdown"
+                            style="display: flex; justify-content: space-between;">
                             <div class="time-box" style="flex: 1 1 20%; min-width: 60px; text-align: center;">
                                 <span id="days" class="num" style="font-size: 1.2rem;">00</span>
                                 <span class="lbl" style="font-size: 0.7rem;">Days</span>
@@ -545,35 +559,32 @@
                                 <span class="lbl" style="font-size: 0.7rem;">Secs</span>
                             </div>
                         </div>
-
                         </p>
 
-                        <!-- VENUE  -->
                         <p class="mb-4 fw-medium" style="font-size:1rem;opacity:.9;">
-                            <span style="white-space: nowrap;">6&nbsp;October&nbsp;2025</span> · 
-                            <span style="white-space: nowrap;">9:00&nbsp;AM&nbsp;WAT</span> · 
+                            <span style="white-space: nowrap;">📅&nbsp;6th&nbsp;of&nbsp;October&nbsp;2025</span> ·
                             <span style="white-space: nowrap;">Conference&nbsp;Centre,</span>
                             <span style="white-space: nowrap;">National&nbsp;Open&nbsp;University&nbsp;of&nbsp;</span>
                             <span style="white-space: nowrap;">Nigeria&nbsp;(NOUN), Abuja</span>
                         </p>
 
-                        <!-- CTA -->
-                        <a href="https://indico.example.com/event/your‑event‑id" class="btn btn-cta shadow" style="display:inline-block;background:#00BFA6;
-         color:#002B36;font-weight:600;padding:.85rem 2rem;
-         border-radius:.35rem;text-decoration:none;">
+                        <a href="https://indico.example.com/event/your‑event‑id" class="btn btn-cta shadow"
+                            style="display:inline-block;background:#00BFA6; color:#ffffff;font-weight:600;padding:.85rem 2rem; border-radius:.35rem;text-decoration:none;">
                             Register&nbsp;Now
                         </a>
+                        
                     </div>
-
-                    <!-- ─────────── IMAGE (right) ─────────── -->
+                    
                     <div class="col-md-6 order-1 order-md-2 text-center">
                         <img src="assets/images/Save the Date (1)-min.jpg" alt="Save‑the‑Date flyer"
                             class="img-fluid rounded shadow-lg" style="max-height:460px;object-fit:cover;">
                     </div>
                 </div>
             </div>
-
     </section>
+
+
+    </script>
     <!-- ===== /HERO ===== -->
 
     <!-- decorative SVG wave -->
@@ -653,7 +664,8 @@
             backdrop-filter: blur(14px) saturate(130%);
             border-radius: 24px;
             padding: 2.5rem 2rem;
-            box-shadow: 0 1.1rem 3rem rgba(0, 0, 0, .1);
+            box-shadow: 0 1.1rem 3rem rgba(0, 0, 0, .04);
+            text-align: left;
         }
 
         /* wave divider */
@@ -692,6 +704,16 @@
             background: #e8f7f5;
             color: var(--deep);
         }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+
+            #about-innovative .col-lg-7,
+            #about-innovative .col-lg-5 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
     </style>
 
     <section id="about-innovative" class="py-0 pb-5" style="position: relative;">
@@ -700,29 +722,27 @@
 
         <div class="container position-relative" style="z-index:2;">
             <div class="row g-lg-5 align-items-center">
-
                 <!-- TEXT & ICONS ----------------------- -->
-                <div class="col-lg-12">
-
-                    <div class="glass-card text-center">
+                <div class="col-lg-8 order-1 order-lg-1" style="text-align: left;box-shadow: none;">
+                    <div class="glass-card" style="text-align: left;">
                         <h2 class="mb-3"
-                            style="font-weight:700;font-size:clamp(2rem,3.5vw+1rem,2.7rem);color:var(--deep);">
+                            style="font-weight:700;font-size:clamp(2rem,3.5vw+1rem,2.7rem);color:var(--deep);text-align: left;">
                             About the Conference
                         </h2>
 
                         <!-- floating icon row -->
-                        <div class="d-flex gap-3 mb-4 d-none justify-content-center">
+                        <div class="d-flex gap-3 mb-4 d-none justify-content-end">
                             <img src="assets/logos/datasphir.png" alt="Datasphir Logo" class="oa-icon">
                             <img src="assets/logos/bookhub.png" alt="BookHub Logo" class="oa-icon">
                             <img src="assets/logos/openbook.png" alt="Open Book Logo" class="oa-icon">
                         </div>
 
-                        <p class="lead fw-semibold mb-4" style="font-size:1.25rem;color:var(--deep);text-align:center;">
+                        <p class="lead fw-semibold mb-4" style="font-size:1.25rem;color:var(--deep);text-align: left;">
                             <em>Reclaiming Academic Sovereignty: Nigeria’s Stakeholder Conference on Open Access Book
                                 Publishing</em>
                         </p>
 
-                        <p style="font-size:1.05rem;line-height:1.65;color:var(--deep);text-align:center;">
+                        <p style="font-size:1.05rem;line-height:1.65;color:var(--deep);text-align: left;">
                             <strong>Reclaiming Academic Sovereignty</strong> is a national gathering dedicated to a
                             coordinated,
                             community‑led framework for Open Access (OA) book publishing in Nigeria. Under the theme
@@ -731,7 +751,7 @@
                             funders, and policymakers to shape the next phase of Nigeria’s OA journey.
                         </p>
 
-                        <p style="font-size:1.05rem;line-height:1.65;color:var(--deep);text-align:center;">
+                        <p style="font-size:1.05rem;line-height:1.65;color:var(--deep);text-align: left;">
                             Expect inspiring keynotes, platform demos, and collaborative policy sprints aimed at
                             national consensus on
                             <strong>Diamond Open Access</strong> — removing both author and reader fees while boosting
@@ -739,24 +759,95 @@
                             global reach.
                         </p>
 
-                        <p style="font-size:1.05rem;line-height:1.65;color:var(--deep);text-align:center;">
+                        <p style="font-size:1.05rem;line-height:1.65;color:var(--deep);text-align: left;">
                             This is a watershed moment—moving from successful pilots to a shared strategy that empowers
                             scholars,
                             strengthens infrastructure, and opens research to the world.
                         </p>
+                        <style>
+                            .attention-badge {
+                                display: inline-flex;
+                                align-items: center;
+                                gap: 0.6rem;
+                                background: linear-gradient(135deg, #00bfa6, #008c76);
+                                color: white;
+                                font-weight: 600;
+                                padding: 0.9rem 2rem;
+                                border-radius: 999px;
+                                font-size: 1rem;
+                                position: relative;
+                                box-shadow: 0 6px 18px rgba(0, 191, 166, 0.35);
+                                overflow: hidden;
+                                cursor: default;
+                            }
 
-                        <div class="text-center mt-4">
-                            <span style="display:inline-block;background:var(--mint);color:var(--deep);
-                           font-weight:600;padding:.85rem 1.9rem;border-radius:2rem;">
-                                Toward a National Infrastructure for Diamond OA
+                            .attention-badge i {
+                                font-size: 1.2rem;
+                            }
+
+                            /* Shine effect */
+                            .attention-badge::after {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: -75%;
+                                width: 50%;
+                                height: 100%;
+                                background: linear-gradient(120deg,
+                                        rgba(255, 255, 255, 0.2) 0%,
+                                        rgba(255, 255, 255, 0.6) 50%,
+                                        rgba(255, 255, 255, 0.2) 100%);
+                                transform: skewX(-25deg);
+                                animation: shine 3s infinite;
+                            }
+
+                            @keyframes shine {
+                                0% {
+                                    left: -75%;
+                                }
+
+                                50% {
+                                    left: 125%;
+                                }
+
+                                100% {
+                                    left: 125%;
+                                }
+                            }
+                        </style>
+                        <div class="mt-4" style="text-align: left;">
+                            <span class="attention-badge">
+                                <i class="bi bi-star-fill"></i> Toward a National Infrastructure for Diamond OA
                             </span>
                         </div>
+
+                    </div>
+                </div>
+                <!-- IMAGE ----------------------- -->
+                <div class="col-lg-4 order-2 order-lg-2 text-center">
+                    <img src="assets/images/apc-obc.jpg" alt="Save‑the‑Date flyer" class="img-fluid rounded shadow-lg"
+                        style="max-height:460px;object-fit:cover;">
+                    <div class="mt-3 text-center">
+                        <a href="https://apc-minna.bookhub.ng/open-access.html" class="btn"
+                            style="font-weight: 600; text-decoration: none; color: #00BFA6;">
+                            Learn More About the Project
+                        </a>
+                        <a
+                            href="assets/images//files/APC_Framework_Signatures.pdf"
+                            target="_blank"
+                            class="btn"
+                            style="background-color: #006661; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;"
+                        >
+                            <i class="bi bi-journal-bookmark"></i> APC OA Framework
+                        </a>
                     </div>
                 </div>
 
+                
+
             </div>
         </div>
-        <div class="separator sep-diag sep-topper" style="transform: scaleX(-1) scaleY(-1);">
+        <div class="separator sep-diag sep-topper d-none" style="transform: scaleX(-1) scaleY(-1);">
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <defs>
                     <linearGradient id="diagGrad" x1="10%" y1="0%" x2="0%" y2="100%">
@@ -768,9 +859,240 @@
             </svg>
         </div>
     </section>
+
     <!-- ========== /ABOUT SECTION ========== -->
 
 
+    <!-- ====== SPEAKERS SECTION ================================= -->
+    <style>
+        /* ============  SPEAKERS SECTION  ============ */
+        :root {
+            --accent: #00bfa6;
+            --bg-card: #ffffff;
+            --bg-modal: #f7faf9;
+            --text-dark: #0e1b2a;
+            --radius: .85rem;
+            --shadow: 0 6px 24px rgba(0, 0, 0, .08);
+        }
+
+        /* section wrapper */
+        section#speakers {
+            background: linear-gradient(135deg, #f5fffc 0%, #fff 70%);
+            padding: clamp(3rem, 5vw, 5rem) 1rem;
+            font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .speakers__title {
+            font-size: clamp(1.8rem, 2.3vw, 2.2rem);
+            text-align: left;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .speakers__title::after {
+            content: "";
+            display: block;
+            width: 250px;
+            height: 4px;
+            background: var(--accent);
+            margin: .7rem 0 0;
+            border-radius: 5px;
+            animation: slide 8s linear infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                background-position: 0
+            }
+
+            100% {
+                background-position: -220px
+            }
+        }
+
+        /* responsive grid: 3 / 2 / 1 */
+        .speaker-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            /* desktop */
+        }
+
+        @media(max-width:992px) {
+            .speaker-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:600px) {
+            .speaker-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* card */
+        .speaker-card {
+            cursor: pointer;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform .25s ease, box-shadow .25s ease;
+            max-width: 360px;
+            margin-inline: auto;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, .12);
+        }
+
+        .speaker-card img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body {
+            padding: 1rem 1.2rem
+        }
+
+        .speaker-name {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0 0 .25rem
+        }
+
+        .speaker-role {
+            font-size: .9rem;
+            color: #444;
+            margin: 0
+        }
+
+        /* =====  Modal  ===== */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1000;
+        }
+
+        .modal-window {
+            max-width: 960px;
+            width: 100%;
+            background: var(--bg-modal);
+            color: var(--text-dark);
+            border-radius: var(--radius);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, .25);
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .modal-img {
+            flex: 0 1 320px;
+            min-width: 260px
+        }
+
+        .modal-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
+
+        .modal-content {
+            flex: 1 1 380px;
+            padding: clamp(1rem, 2.5vw, 2rem);
+            max-height: 80vh;
+            overflow: auto;
+        }
+
+        .modal-content h3 {
+            margin: .2rem 0 .6rem;
+            font-size: 1.4rem
+        }
+
+        .modal-tag {
+            font-size: .9rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600
+        }
+
+        .modal-bio {
+            white-space: pre-line;
+            font-size: .95rem;
+            line-height: 1.55
+        }
+
+        details.more-toggle summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: .6rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: .5rem;
+            right: .75rem;
+            background: transparent;
+            border: 0;
+            font-size: 2rem;
+            line-height: 1;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .modal-close:hover {
+            color: #000
+        }
+
+        @media(max-width:600px) {
+            .modal-window {
+                flex-direction: column
+            }
+
+            .modal-img {
+                flex: none;
+                height: 300px
+            }
+        }
+    </style>
+
+    <section id="speakers">
+        <div class="container">
+            <h2 class="speakers__title">Keynote Speakers</h2>
+
+            <div id="speakerGrid" class="speaker-grid"><!-- cards injected by JS --></div>
+        </div>
+
+        <!-- single reusable modal -->
+        <div id="speakerModal" class="modal-backdrop" hidden>
+            <div class="modal-window" role="dialog" aria-modal="true">
+                <button class="modal-close" aria-label="Close">&times;</button>
+                <div class="modal-img"><img id="modalImg" src="" alt=""></div>
+                <div class="modal-content">
+                    <h3 id="modalName"></h3>
+                    <p class="modal-tag" id="modalRole"></p>
+
+                    <!-- toggle (click to reveal) -->
+                    <details class="more-toggle" id="modalToggle">
+                        <summary>More details</summary>
+                        <div class="modal-bio" id="modalBio"></div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -836,8 +1158,8 @@
 
 
     <!-- ========= BOOKHUB PLATFORM ========= -->
-    <section id="bookhub" class="py-5" style="position: relative; overflow: hidden;">
-        <div class="separator sep-diag sep-bottom">
+    <section id="bookhub" class="pt-5 d-none" style="position: relative; overflow: hidden;">
+        <div class="separator sep-diag sep-bottom d-none">
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <defs>
                     <linearGradient id="diagGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -867,7 +1189,9 @@
                         <li class="d-flex align-items-start mb-3"><i class="bi bi-check2-circle text-success me-2"></i>
                             Support multilingual publishing</li>
                     </ul>
-                    <a href="https://apc.bookhub.africa" class="btn btn-outline-primary">Visit: apc.bookhub.africa</a>
+                    <a href="https://apc.bookhub.africa" class="btn btn-cta shadow"
+                        style="display:inline-block;background:#00BFA6;color:#002B36;font-weight:600;padding:.85rem 2rem;border-radius:.35rem;text-decoration:none;">Visit
+                        Site</a>
                 </div>
             </div>
         </div>
@@ -888,7 +1212,7 @@
     </section>
 
     <!-- ===== BEYOND THE CONFERENCE (NEW DETAILED SECTION) ===== -->
-    <section id="beyond-conference" class="py-5 position-relative"
+    <section id="beyond-conference" class="pb-5 position-relative d-none"
         style="background:radial-gradient(ellipse at top left,rgba(0,126,133,.15),transparent 60%);">
         <div class="separator sep-diag sep-bottom" style="transform: scaleX(-1);">
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -978,284 +1302,412 @@
 
     <style>
         /* ===== DOWNLOADS SECTION STYLING ===== */
-#downloads {
-  position: relative;
-  background: linear-gradient(135deg, #F0FCF9 0%, #E8F7F5 100%);
-  overflow: hidden;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
+        #downloads {
+            position: relative;
+            background: linear-gradient(135deg, #F0FCF9 0%, #E8F7F5 100%);
+            overflow: hidden;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
 
-/* decorative clipped corners */
-#downloads::before,
-#downloads::after {
-  content: "";
-  position: absolute;
-  width: 200px; height: 200px;
-  background: var(--teal-light);
-  opacity: .15;
-  transform: rotate(45deg);
-  z-index: 1;
-}
-#downloads::before {
-  top: -100px; left: -100px;
-}
-#downloads::after {
-  bottom: -100px; right: -100px;
-}
+        /* decorative clipped corners */
+        #downloads::before,
+        #downloads::after {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--teal-light);
+            opacity: .15;
+            transform: rotate(45deg);
+            z-index: 1;
+        }
 
-/* card grid sits above decorations */
-#downloads .container {
-  position: relative;
-  z-index: 2;
-}
+        #downloads::before {
+            top: -100px;
+            left: -100px;
+        }
 
-/* Download cards */
-#downloads .download-card {
-  background: #ffffff;
-  border-radius: 1rem;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: transform .3s ease, box-shadow .3s ease;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, .08);
-  position: relative;
-  overflow: hidden;
-}
+        #downloads::after {
+            bottom: -100px;
+            right: -100px;
+        }
 
-/* floating icon circle */
-#downloads .download-card i {
-  background: var(--teal-light);
-  color: #fff;
-  width: 3rem;
-  height: 3rem;
-  font-size: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  transition: transform .3s ease;
-}
+        /* card grid sits above decorations */
+        #downloads .container {
+            position: relative;
+            z-index: 2;
+        }
 
-/* title spacing */
-#downloads .download-card h6 {
-  margin: 0;
-  font-weight: 600;
-  color: var(--navy);
-}
+        /* Download cards */
+        #downloads .download-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: transform .3s ease, box-shadow .3s ease;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .08);
+            position: relative;
+            overflow: hidden;
+        }
 
-/* hover effect */
-#downloads .download-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, .12);
-}
-#downloads .download-card:hover i {
-  transform: scale(1.1) rotate(10deg);
-}
+        /* floating icon circle */
+        #downloads .download-card i {
+            background: var(--teal-light);
+            color: #fff;
+            width: 3rem;
+            height: 3rem;
+            font-size: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            transition: transform .3s ease;
+        }
 
+        /* title spacing */
+        #downloads .download-card h6 {
+            margin: 0;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* hover effect */
+        #downloads .download-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, .12);
+        }
+
+        #downloads .download-card:hover i {
+            transform: scale(1.1) rotate(10deg);
+        }
     </style>
 
     <!-- ========= DOWNLOADS & MEDIA ========= -->
     <!-- ========= DOWNLOADS & MEDIA ========= -->
-<section id="downloads" class="py-5">
-    <div class="container">
-      <h3 class="section-title text-center mb-5">Downloads & Media</h3>
-      <div class="row g-4">
-        <div class="col-sm-6 col-md-4">
-          <a href="assets/images/Save the Date (1)-min.jpg" download class="text-decoration-none">
-            <div class="download-card">
-              <i class="bi bi-file-earmark-pdf"></i>
-              <h6>Conference Flyer (PDF)</h6>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <a href="#" class="text-decoration-none">
-            <div class="download-card">
-              <i class="bi bi-megaphone"></i>
-              <h6>Press Release (Coming Soon)</h6>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <a href="#" class="text-decoration-none">
-            <div class="download-card">
-              <i class="bi bi-collection-play"></i>
-              <h6>Session Recordings (Post-event)</h6>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-<style>
-    /* ===== Contact & Organizers Enhancements ===== */
-#contact {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg,
-              rgba(0,191,166,.08) 0%,
-              rgba(255,255,255,1) 100%);
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-/* decorative corner sparks */
-#contact::before,
-#contact::after {
-  content: "";
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  background: var(--teal-light);
-  opacity: .12;
-  transform: rotate(45deg);
-  z-index: 1;
-}
-#contact::before { top: -90px; left: -90px; }
-#contact::after  { bottom: -90px; right: -90px; }
-
-/* bring content above decorations */
-#contact .container { position: relative; z-index: 2; }
-
-/* contact cards row */
-#contact .contact-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-bottom: 3rem;
-}
-
-/* individual contact card */
-.contact-card {
-  flex: 1 1 240px;
-  background: #fff;
-  border-radius: .75rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,.06);
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-.contact-card i {
-  font-size: 1.6rem;
-  color: var(--teal);
-  min-width: 32px;
-}
-.contact-card p {
-  margin: 0;
-  font-size: .95rem;
-  color: #123;
-}
-.contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0,0,0,.12);
-}
-
-/* organizer logos */
-.org-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-.org-logo {
-  filter: grayscale(1) opacity(.6);
-  width: 120px;
-  transition: filter .3s ease, transform .3s ease;
-}
-.org-logo:hover {
-  filter: none;
-  transform: translateY(-6px);
-}
-
-</style>
-    <!-- ========= CONTACT & ORGANIZERS ========= -->
-    <section id="contact">
+    <section id="downloads" class="py-5 d-none">
         <div class="container">
-          <h3 class="section-title text-center mb-5">Contact &amp; Organizers</h3>
-      
-          <div class="contact-row">
-            <div class="contact-card">
-              <i class="bi bi-envelope-fill"></i>
-              <p><a href="mailto:apc@bookhub.ng">apc@bookhub.ng</a></p>
-            </div>
-            <div class="contact-card">
-              <i class="bi bi-geo-alt-fill"></i>
-              <p>Conference Centre, NOUN, Abuja</p>
-            </div>
-            <div class="contact-card">
-              <i class="bi bi-telephone-fill"></i>
-              <p>Datasphir: +234 123 456 7890</p>
-            </div>
-          </div>
-          <style>
-            /* —— wrapper hides overflow —— */
-.slider-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* —— track is flex, no wrap —— */
-.slide-track {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  /* animation will be injected via JS */
-}
-
-/* —— each slide holds one logo —— */
-.slide {
-  flex: 0 0 auto;
-  margin: 0 1.5rem;
-}
-
-/* —— preserve original aspect ratio —— */
-.slide img {
-  display: block;
-  width: 120px;   /* adjust as needed */
-  height: auto;
-}
-
-          </style>
-          <div class="slider-container">
-            <div class="slide-track">
-              <div class="slide"><img src="./assets/images/BookHub.png"   alt="BookHub logo"   style="width: 240px;" /></div>
-              <div class="slide"><img src="./assets/images/NOUN.png"      alt="NOUN logo"      /></div>
-              <div class="slide"><img src="./assets/images/TETFund.png"   alt="TETFund logo"   style="width: 240px;" /></div>
-              <div class="slide"><img src="./assets/images/Datasphir.png" alt="Datasphir logo" style="width: 240px;" /></div>
-              <div class="slide"><img src="./assets/images/OBC.png"       alt="OBC logo"       /></div>
-              <!-- JS will clone these five and append them again -->
-            </div>
-          </div>
-          
-        </div>
-      </section>
-      
-
-    <!-- ========= EVENT LOCATION ========= -->
-    <section class="event-location py-5">
-        <div class="container text-left">
-            <h3 class="section-title mb-4">National Open University of Nigeria (NOUN), Abuja</h3>
-            <div class="venue-wrapper mb-4 position-relative">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.7134181921083!2d7.49508!3d9.03048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0a5b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sNational%20Open%20University%20of%20Nigeria%20(NOUN)%2C%20Abuja!5e0!3m2!1sen!2sng!4v1741986773346!5m2!1sen!2sng"
-                    width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
-                <i class="bi bi-geo-alt-fill map-pin"></i>
+            <h3 class="section-title text-center mb-5">Downloads & Media</h3>
+            <div class="row g-4">
+                <div class="col-sm-6 col-md-4">
+                    <a href="assets/images/Save the Date (1)-min.jpg" download class="text-decoration-none">
+                        <div class="download-card">
+                            <i class="bi bi-file-earmark-pdf"></i>
+                            <h6>Conference Flyer (PDF)</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="download-card">
+                            <i class="bi bi-megaphone"></i>
+                            <h6>Press Release (Coming Soon)</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="download-card">
+                            <i class="bi bi-collection-play"></i>
+                            <h6>Session Recordings (Post-event)</h6>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
+    <style>
+        /* —— wrapper hides overflow —— */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* —— track is flex, no wrap —— */
+        .slide-track {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            /* animation will be injected via JS */
+        }
+
+        /* —— each slide holds one logo —— */
+        .slide {
+            flex: 0 0 auto;
+            margin: 0 1.5rem;
+        }
+
+        /* —— preserve original aspect ratio —— */
+        .slide img {
+            display: block;
+            width: 120px;
+            /* adjust as needed */
+            height: auto;
+        }
+    </style>
+    <div class="slider-container">
+        <div class="slide-track">
+            <div class="slide"><a href="https://apc.bookhub.africa" target="_blank"><img
+                        src="./assets/images/BookHub.png" alt="BookHub logo" style="width: 240px;" /></a></div>
+            <div class="slide"><a href="https://www.nou.edu.ng" target="_blank"><img src="./assets/images/NOUN.png"
+                        alt="NOUN logo" /></a></div>
+            <div class="slide"><a href="https://www.tetfund.gov.ng" target="_blank"><img
+                        src="./assets/images/TETFund.png" alt="TETFund logo" style="width: 240px;" /></a></div>
+                        <!-- <div class="slide"><a href="https://www.datasphir.com" target="_blank"><img src="./assets/images/Datasphir.png" alt="Datasphir logo" style="width: 240px;" /></a></div> -->
+                        <div class="slide"><a href="https://libsense.ren.africa/home" target="_blank"><img src="./assets/images/libsense.png" alt="Datasphir logo" style="width: 240px;" /></a></div>
+                        <div class="slide"><a href="https://apc-minna.bookhub.ng/index.html" target="_blank"><img src="./assets/images/Futminna_logo.jpg" alt="Datasphir logo" style="width: 240px;" /></a></div>
+            <div class="slide"><a href="https://www.openbookcollective.org" target="_blank"><img
+                        src="./assets/images/OBC.png" alt="OBC logo" /></a></div>
+            <!-- JS will clone these five and append them again -->
+        </div>
+    </div>
+
+    <style>
+        :root {
+            --teal: #00bfa6;
+            --teal-light: #00bfa6;
+        }
+
+        #contact {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg,
+                    rgba(0, 191, 166, .08) 0%,
+                    rgba(255, 255, 255, 1) 100%);
+            padding: 4rem 1rem;
+        }
+
+        /* decorative corner sparks */
+        #contact::before,
+        #contact::after {
+            content: "";
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            background: var(--teal-light);
+            opacity: .12;
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+
+        #contact::before {
+            top: -80px;
+            left: -80px;
+        }
+
+        #contact::after {
+            bottom: -80px;
+            right: -80px;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 0.5rem;
+        }
+
+        .motion-bar {
+            height: 5px;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto 0.5rem;
+            border-radius: 3px;
+            background: linear-gradient(90deg, rgba(0, 191, 166, .6), rgba(0, 191, 166, 0.1), rgba(0, 191, 166, .6));
+            background-size: 200% 100%;
+            animation: slide 3s linear infinite;
+        }
+
+        @keyframes slide {
+            from {
+                background-position: 0% 0;
+            }
+
+            to {
+                background-position: -200% 0;
+            }
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 2vw, 1.9rem);
+            margin: 0 0 1rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .contact-main {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .contact-info {
+            flex: 1 1 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-width: 0;
+            /* allow shrinking */
+        }
+
+        .contact-cards-vertical {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        .contact-card {
+            background: #fff;
+            border-radius: .75rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .06);
+            padding: 1.25rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: transform .3s ease, box-shadow .3s ease;
+            width: auto;
+            flex: none;
+        }
+
+        .contact-card i {
+            font-size: 1.4rem;
+            color: var(--teal);
+            min-width: 28px;
+            flex-shrink: 0;
+        }
+
+        .contact-card p {
+            margin: 0;
+            font-size: .9rem;
+            color: #123;
+            word-break: break-word;
+        }
+
+        .contact-card a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, .12);
+        }
+
+        .map-wrapper {
+            flex: 1 1 320px;
+            position: relative;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* maintain 4:3-ish aspect ratio on mobile */
+        .map-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 ratio; adjust to 75% if you want squarer */
+            border-radius: .5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+        }
+
+        .map-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .map-pin {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            color: var(--teal);
+            background: #fff;
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, .1);
+            display: none;
+            /* kept hidden as before */
+        }
+
+        @media (max-width: 900px) {
+            .contact-main {
+                flex-direction: column;
+            }
+
+            .contact-info,
+            .map-wrapper {
+                width: 100%;
+            }
+
+            .contact-card {
+                padding: 1rem;
+            }
+        }
+    </style>
+
+    <section id="contact" style="margin-top: 20px;">
+        <div class="container">
+            <h3 class="section-title">Contact Us</h3>
+
+            <div class="contact-main">
+                <div class="contact-info">
+                    <div class="contact-cards-vertical">
+                        <div class="contact-card" style="width: 500px;">
+                            <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                            <p><a href="mailto:apc@bookhub.ng">apc@bookhub.ng</a></p>
+                        </div>
+                        <div class="contact-card" style="width: 500px;">
+                            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                            <p><a href="#mapper">Conference Centre, NOUN, Abuja</a></p>
+                        </div>
+                        <div class="contact-card d-none">
+                            <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                            <p><a href="tel:+2349160008014">Datasphir: +234 9160008014</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-wrapper d-none" style="position: relative;top: -20px;">
+                    <div class="map-container">
+                        <iframe class="map-iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.7134181921083!2d7.49508!3d9.03048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0a5b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sNational%20Open%20University%20of%20Nigeria%20(NOUN)%2C%20Abuja!5e0!3m2!1sen!2sng!4v1741986773346!5m2!1sen!2sng"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            aria-label="Map to NOUN Abuja"></iframe>
+                        <i class="bi bi-geo-alt-fill map-pin" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
     <!-- ========= FOOTER (UNCHANGED) ========= -->
-    <footer class="text-white py-3" style="background-color:#310627;">
+    <footer class="text-white py-3" style="background-color:#0b604b;">
         <div class="container text-center">
             <p>&copy; 2024 BookHub. All rights reserved.</p>
-            <p><a href="#" target="_blank" class="text-white">FUTMinna</a> | <a href="#" target="_blank"
-                    class="text-white">Open Book Collective</a> | <a href="#" target="_blank"
+            <p><a href="https://futminna.edu.ng" target="_blank" class="text-white">FUTMinna</a> | <a href="https://openbookcollective.org" target="_blank"
+                    class="text-white">Open Book Collective</a> | <a href="https://datasphir.com" target="_blank"
                     class="text-white">Datasphir</a></p>
         </div>
     </footer>
