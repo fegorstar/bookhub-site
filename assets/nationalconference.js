@@ -79,9 +79,9 @@
     {
       id: 'joe',
       img: './assets/images/joe.png',
-      name: 'Joe Deville',
+      name: 'Prof. Joe Deville',
       role: 'Managing Director, Open Book Collective | Co-Founder, Mattering Press & ScholarLed',
-      bio: `Joe Deville is a Senior Lecturer based jointly in the Department of Organisation, Work and Technology and the Department of Sociology. His research interests include: The everyday, embodied life of debt, credit and finance Informational mobility, methods of algorithmic prediction, futures of credit scoring Open Access and the politics of academic knowledge production Disaster preparedness and the production/materialisation of risk Science and technology studies, speculative sociology, non-representational theory Digital methods Read more about Joe Deville here: <a href="https://www.lancaster.ac.uk/lums/people/joseph-deville" target="_blank">https://www.lancaster.ac.uk/lums/people/joseph-deville</a>`
+      bio: `Prof. Joe Deville is a senior lecturer based jointly in the Department of Organisation, Work and Technology and the Department of Sociology. His research interests include: the everyday, embodied life of debt, credit, and finance; informational mobility, methods of algorithmic prediction, futures of credit scoring; open access and the politics of academic knowledge production; disaster preparedness and the production/materialisation of risk; science and technology studies, speculative sociology, non-representational theory; digital methods. Read more about Joe Deville here: <a href="https://www.lancaster.ac.uk/lums/people/joseph-deville" target="_blank">https://www.lancaster.ac.uk/lums/people/joseph-deville</a>.`
     }
     
   ];
