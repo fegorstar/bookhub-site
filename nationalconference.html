@@ -1110,6 +1110,33 @@
             </div>
         </div>
     </section>
+    
+    
+    <section id="disguest" style="margin-bottom: 30px;">
+        <div class="container">
+            <h2 class="speakers__title">Distinguished Guests</h2>
+
+            <div id="guestGrid" class="speaker-grid"><!-- cards injected by JS --></div>
+        </div>
+
+        <!-- single reusable modal -->
+        <div id="speakerModal" class="modal-backdrop" hidden>
+            <div class="modal-window" role="dialog" aria-modal="true">
+                <button class="modal-close" aria-label="Close">&times;</button>
+                <div class="modal-img"><img id="modalImg" src="" alt=""></div>
+                <div class="modal-content">
+                    <h3 id="modalName"></h3>
+                    <p class="modal-tag" id="modalRole"></p>
+
+                    <!-- toggle (click to reveal) -->
+                    <details class="more-toggle" id="modalToggle">
+                        <summary>More details</summary>
+                        <div class="modal-bio" id="modalBio"></div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 

@@ -82,9 +82,34 @@
       name: 'Prof. Joe Deville',
       role: 'Managing Director, Open Book Collective | Co-Founder, Mattering Press & ScholarLed',
       bio: `Prof. Joe Deville is a senior lecturer based jointly in the Department of Organisation, Work and Technology and the Department of Sociology. His research interests include: the everyday, embodied life of debt, credit, and finance; informational mobility, methods of algorithmic prediction, futures of credit scoring; open access and the politics of academic knowledge production; disaster preparedness and the production/materialisation of risk; science and technology studies, speculative sociology, non-representational theory; digital methods. Read more about Joe Deville here: <a href="https://www.lancaster.ac.uk/lums/people/joseph-deville" target="_blank">https://www.lancaster.ac.uk/lums/people/joseph-deville</a>.`
+    },
+
+      {
+        id: 'mary',
+        img: './assets/images/mary.png',
+        name: 'Mary Felix-Maina',
+        role: 'General Manager, Directory of OPEN Access Books (DOAB) & OAPEN',
+        bio: `Mary is the General Manager at DOAB/OAPEN. She is also involved in coordinating the DOAB in Africa initiative. She has previously worked in various university Libraries in Kenya managing Library teams, collections, user services and supporting and implementing scholarly communication processes and most recently as a Research Data Management consultant in the Netherlands. Besides ensuring overall organizational efficiency within DOAB/OAPEN, Mary participates in sustaining a fully engaged Open Science community, with a keen focus on stakeholders and OA processes in the Global south. Read more about Mary Felix-Maina here: <a href="https://www.oapen.org/oapen/7664742-team" target="_blank">https://www.oapen.org/oapen/7664742-team</a>.`
+      }
+    
+  ];
+
+  const disguests = [
+    {
+      id: 'echono',
+      img: '/assets/images/dstetfund.jpeg',
+      name: 'Arc. Sonny Sylva Togo Echono',
+      role: 'Executive Secretary, Tertiary Education Trust Fund (TETFund)',
+      bio: `<div class="profile">
+      <p><strong>PROFILE OF ARC. SONNY S.T. ECHONO</strong></p>
+      <p>Arc. Sonny Sylva Togo Echono, FNIA, has been the Executive Secretary of TETFund since March 2022. With a distinguished career in Nigeria’s federal civil service, he has held key positions as Permanent Secretary in ministries such as Agriculture, Communications, and Education. Echono is a Fellow of the Nigerian Institute of Architects and is committed to advancing educational infrastructure and capacity building in tertiary institutions. Under his leadership, TETFund has focused on enhancing research, innovation, and ICT in higher education, emphasizing accountability, transparency, and best practices.</p>
+      <p>Read more about Arc. Echono here: <a href="https://tetfund.gov.ng/index.php/management-team/" target="_blank">https://tetfund.gov.ng/index.php/management-team/</a></p>
+    </div>
+    `
     }
     
   ];
+
   
   /* ===================  RENDER CARDS  =================== */
   const grid = document.getElementById('speakerGrid');
@@ -99,6 +124,20 @@
         <p class="speaker-role">${sp.role}</p>
       </div>`;
     grid.appendChild(card);
+  });
+  
+  const ggrid = document.getElementById('guestGrid');
+  disguests.forEach(sp => {
+    const card = document.createElement('article');
+    card.className = 'speaker-card';
+    card.dataset.id = sp.id;
+    card.innerHTML = `
+      <img src="${sp.img}" alt="Portrait of ${sp.name}">
+      <div class="card-body">
+        <h3 class="speaker-name">${sp.name}</h3>
+        <p class="speaker-role">${sp.role}</p>
+      </div>`;
+    ggrid.appendChild(card);
   });
   
   /* ===================  MODAL LOGIC  =================== */
@@ -126,6 +165,13 @@
     const card = e.target.closest('.speaker-card');
     if(!card) return;
     const sp = speakers.find(s=>s.id===card.dataset.id);
+    if(sp) showModal(sp);
+  });
+  
+  ggrid.addEventListener('click', e=>{
+    const card = e.target.closest('.speaker-card');
+    if(!card) return;
+    const sp = disguests.find(s=>s.id===card.dataset.id);
     if(sp) showModal(sp);
   });
   
